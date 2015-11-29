@@ -1,0 +1,16 @@
+---
+layout: page
+title: 404 - Page not found
+---
+
+哎呀，这个页面失踪了，你可以尝试[返回首页]({{site.baseurl}})。
+
+哎呀，这个页面失踪了，你可以尝试<a href="/">返回首页</a>。
+
+<a href="/">
+{% if site.model == 'pub' %}
+  <img src="{{ site.pub.image }}404.jpg" style="width: 800;">
+{% else %}
+  <img src="{{ site.dev.image }}404.jpg" style="width: 800;">
+{% endif %}
+</a>

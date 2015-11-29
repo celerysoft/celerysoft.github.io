@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% include head.html %}
+<body>
+<!--引入导航-->
+{% include header.html %}
+<!--主体内容-->
+<div class="page-content">
+    <div class="container-fluid">
+    	<div class="row">
+                <div class="col-md-offset-2 col-md-8  main-content">
+                	<div  id="searchpcc">
+						<a href="/"><img id="abouthead" src="{{ site.dev.image }}about.png"></a>
+						<p>月下之光 --celerysoft</p>
+                	</div>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-2 col-lg-offset-3 col-lg-6 col-md-8  main-content">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</div>
+<!--引入结尾-->
+{% include footer.html %}
+<!--引入脚本-->
+{% include script.html %}
+</body>
+</html>

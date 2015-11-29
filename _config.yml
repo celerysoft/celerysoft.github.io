@@ -1,0 +1,49 @@
+title: celerysoft - 月下之光
+home: celerysoft
+paginate: 8
+email: celerysoft@gmail.com
+production_url: http://celerysoft.github.io
+baseurl: "／" # the subpath of your site, e.g. /blog/
+url: "http://celerysoft.github.io" # the base hostname & protocol for your site
+permalink: /:year:month:day.html
+
+# Build settings
+highlighter: pygments
+markdown: kramdown  # [ maruku | rdiscount | kramdown | redcarpet ]
+
+kramdown:
+  input:          GFM
+  auto_ids:       true
+  auto_id_prefix: 'id-'
+
+# 网站描述
+description:  一个90后程序猿的博客，邮箱：celerysoft@gmail.com
+# 用户名，用来显示自己相关网络账号信息的。about.md之中。
+username: celerysoft
+
+user:
+  email: celerysoft
+  github: http://github.com/celerysoft
+  weibo: http://weibo.com/celerysoft
+  twitter: http://twitter.com/celerysoft
+  weixin: celerysoft
+  desc: 轻度强迫症和代码洁癖，喜欢编程并且享受编程。
+
+# 这里替换成线上的静态资源的链接。 主要最后的"/"。也要注意css使用的字体的链接。
+#pub:
+#  css: http://7xjddt.com1.z0.glb.clouddn.com/
+#  js: http://7xjddx.com1.z0.glb.clouddn.com/
+#  image: http://7xjddm.com1.z0.glb.clouddn.com/
+pub:
+  css: /assets/css/
+  js: /assets/js/
+  image: /assets/images/
+
+# 这里是本地的静态资源存放的路径
+dev:
+  css: /assets/css/
+  js: /assets/js/
+  image: /assets/images/
+
+# 选择模式 开发模式还是发布模式。上线之前务必改成pub！
+model: pub
