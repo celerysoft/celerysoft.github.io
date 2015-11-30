@@ -1,9 +1,11 @@
 title: celerysoft - 月下之光
 home: celerysoft
+gems: [jekyll-paginate]
 paginate: 8
+paginate_path: "page:num"
 email: celerysoft@gmail.com
 production_url: http://celerysoft.github.io
-baseurl: "／" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://celerysoft.github.io" # the base hostname & protocol for your site
 permalink: /:year:month:day.html
 
@@ -22,7 +24,7 @@ description:  一个90后程序猿的博客，邮箱：celerysoft@gmail.com
 username: celerysoft
 
 user:
-  email: celerysoft
+  email: celerysoft@gmail.com
   github: http://github.com/celerysoft
   weibo: http://weibo.com/celerysoft
   twitter: http://twitter.com/celerysoft
