@@ -18,9 +18,10 @@ permalink: /category/
 				{% if node.title != null %}
 					{% if group == null or group == node.group %}
 					<li>
-						<i class="fa fa-headphones"></i>&nbsp;&nbsp;
-						<a href="{{node.url}}">{{node.title}}</a> 
-						<span>( {{ node.date | date: "%Y/%m/%d" }} )</span> 
+						<i class="fa fa-file-o"></i>
+						&nbsp;&nbsp;
+						<a href="{{node.url}}">{{node.title}}</a>
+						<span>( {{ node.date | date: "%Y/%m/%d" }} )</span>
 					</li>
 					{% endif %}
 				{% endif %}
