@@ -16,7 +16,7 @@ layout: default
 			</a>
 		{% else %}
 			<a href="/about/">
-			{{ site.username }}
+			{{ site.user.name }}
 			</a>
 		{% endif %}
 		<!--日期-->
@@ -24,10 +24,14 @@ layout: default
 		<i class="fa fa-calendar"></i>
 		{% assign d = post.date | date: "%d" | plus:'0' %}
 		<a href="/archive/">{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}/{{ post.date | date: "%d" }}</a>
-		<!-- 分类&标题 -->
+		<!-- 分类 -->
 		&nbsp;&nbsp;
 		<i class="fa fa-folder-open-o"></i>
-		<a href="/category/">{{ post.categories }} > {{ post.title }}</a>
+		<a href="/category/">{{ post.categories }}</a>
+		<!-- 分类 -->
+		&nbsp;&nbsp;
+		<i class="fa fa-tags"></i>
+		{{ post.title }}
 	</div>
 
 	<!--文章摘要-->

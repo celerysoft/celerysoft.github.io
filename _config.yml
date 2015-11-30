@@ -21,6 +21,7 @@ kramdown:
 description:  一个90后程序猿的博客，邮箱：celerysoft@gmail.com
 
 user:
+  name: celerysoft
   email: celerysoft@gmail.com
   github: http://github.com/celerysoft
   weibo: http://weibo.com/celerysoft
