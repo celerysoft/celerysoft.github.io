@@ -3,36 +3,20 @@ layout: page
 title: 关于我
 permalink: /about/
 ---
+
+## 个人简介
+目前专注Android开发，Material Design狂热分子
+憧憬iOS开发，有机会期待进入该领域
+热爱编程并且享受编程
+开源爱好者，轻度代码洁癖
+
+## 联系方式
+个人邮箱：<a href="mailto:{{ site.user.email }}">{{ site.user.email }}</a>
+GitHub：[{{ site.user.github }}]({{ site.user.github }})
+新浪微博：[{{ site.user.weibo }}]({{ site.user.weibo }})
+<a href="http://weibo.com/u/1674427185?s=6uyXnP" target="blank"><img border="0" src="http://service.t.sina.com.cn/widget/qmd/1674427185/acf6b5a8/1.png"/>
+
 <div class="about">
-	<h2>基本信息</h2>
-	{% if site.user.email%}
-	<p>
-		<em>email</em> : <a href="mailto:{{ site.user.email }}">celerysoft@gmail.com</a>
-	</p>
-	{% endif %}
-	{% if site.user.weibo%}
-	<p>
-		<em>weibo</em> : <a href="{{ site.user.weibo }}">weibo.com/{{ site.username }}</a>
-	</p>
-	{% endif %}
-	{% if site.user.twitter%}
-	<p>
-		<em>twitter</em> : <a href="{{ site.user.twitter }}">twitter.com/{{ site.username }}</a>
-	</p>
-	{% endif %}
-	{% if site.user.github %}
-	<p>
-		<em>github</em> : <a href="{{ site.user.github}} ">github.com/{{ site.username }}</a>
-	</p>
-	{% endif %}
-
-	{% if site.user.desc %}
-		<h2>个人简介</h2>
-		<p>
-			{{ site.user.desc }}
-		</p>
-	{% endif %}
-
 	<h2>语言：</h2>
 	<div class='row'>
 	    <div class='col-xs-8'>
@@ -116,6 +100,6 @@ permalink: /about/
 	    <button class='btn btn-default btn-xs'>Flex</button>
 	    <button class='btn btn-default btn-xs'>C++</button>
 	</p>
-
-	{% include extends/disqus.html %}
 </div>
+
+{% include extends/disqus.html %}
