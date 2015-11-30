@@ -1,13 +1,13 @@
 title: celerysoft - 月下之光
 home: celerysoft
-gems: [jekyll-paginate]
-paginate: 8
-paginate_path: "page:num"
 email: celerysoft@gmail.com
 production_url: http://celerysoft.github.io
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://celerysoft.github.io" # the base hostname & protocol for your site
 permalink: /:year:month:day.html
+gems: [jekyll-paginate]
+paginate: 8
+paginate_path: "page:num"
 
 # Build settings
 highlighter: pygments

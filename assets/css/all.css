@@ -1,3 +1,7 @@
+/**
+  * 网站的一些css效果，包括字体等
+  **/
+
 body {
     background: #f2f2f2;
     line-height: 1.5;
@@ -26,7 +30,7 @@ h3 {
 
 a {
     text-decoration: none;
-    color: #3e3e3e;
+    color: #1212DE;
 }
 a:hover {
     text-decoration: none;
@@ -61,7 +65,7 @@ h1 > a:hover {
         min-height: 50px;
     }
     .navbar-nav {
-        float: right;    
+        float: right;
     }
     .navbar-nav > li > a {
         font-size: 13px;
@@ -264,4 +268,3 @@ footer p {
   background-color: #3e3e3e;
   border-color: #3e3e3e;
 }
-

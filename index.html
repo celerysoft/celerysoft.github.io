@@ -10,7 +10,15 @@ layout: default
 	<div class="desc">
 		<!-- 作者姓名 -->
 		<i class="fa fa-user"></i>
-		<a href="/about/">{{ site.username }}</a>
+		{% if post.author %}
+			<a href="{{ post.sourceUrl }}">
+			{{ post.author }}
+			</a>
+		{% else %}
+			<a href="/about/">
+			{{ site.username }}
+			</a>
+		{% endif %}
 		<!--日期-->
 		&nbsp;&nbsp;
 		<i class="fa fa-calendar"></i>
