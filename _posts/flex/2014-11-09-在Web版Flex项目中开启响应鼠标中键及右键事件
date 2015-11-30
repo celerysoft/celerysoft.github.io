@@ -1,0 +1,17 @@
+---
+layout: post
+title: 在Web版Flex项目中开启响应鼠标中键及右键事件
+categories: flex
+---
+
+在Flex的Web项目中，可能是基于安全原因，是无法为鼠标中键及右键建立监听事件的。网上关于自定义右键菜单或者屏蔽右键的内容也过于复杂，话不多说，直接上方法。
+
+# 一、下载Playerglobal.swc archives - Developers only：
+打开链接：[http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html](http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html)，要是链接失效了可以搜索“Playerglobal.swc archives - Developers only”，进入Adobe官方页面，根据你的基于的Flash Player的版本，下载对应的swc文件，目前Flash Player的最新版本是Flash Player 15，所以我下载了对应的swc。
+
+# 二、配置开发环境：
+1、将下载好的swc文件放到X:\Program Files\Adobe\Adobe Flash Builder 4.6\sdks\4.6.0\frameworks\libs\player\15.0，该目录为Adobe Flash Builder的安装目录，15.0注意替换为开发对应的Flash Player版本，并将swc文件重命名为：playerglobal.swc；
+2、在Adobe Flash Builder中，在包资源管理器中右键项目-->打开属性-->Flex编译器，在附加的编译器参数中输入引号内的内容：“-locale en_US -target-player=15.0 -swf-version=15”，然后确认。附上一篇：[Flash Player、playerglobal.swc、target-player、swf-version、Flex SDK的内在关联](http://celerysoft.blog.163.com/blog/static/2135250822014101911417804/)。
+
+# 三、添加相关功能：
+在执行完步骤二之后，可以发现在MouseEvent中多了很多东西，其中就包括MIDDLE_MOUSE_DOWN、MIDDLE_MOUSE_UP、IGHT_MOUSE_DOWN等等。接下来，就是发挥你的创造力，完善你的代码啦。
