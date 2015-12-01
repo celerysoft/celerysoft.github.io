@@ -41,18 +41,26 @@ layout: default
 		<!--前一页-->
 		{% if page.previous %}
 		<li class="previous">
-			<a href="{{ site.BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a>
+			<a href="{{ site.BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">
+				<i class="fa  fa-arrow-left"></i>
+				<span>Previous</span>
+				<div>{{ page.previous.title }}</div>
+			</a>
 		</li>
 		{% else %}
 		<li class="previous disabled">
-			<a>&larr; Previous</a>
+			<a>Previous</a>
 		</li>
 		{% endif %}
 
 		<!--下一页-->
 		{% if page.next %}
 		<li class="next">
-			<a href="{{ site.BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a>
+			<a href="{{ site.BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">
+				<span>Next</span>
+				<i class="fa  fa-arrow-right"></i>
+				<div>{{ page.next.title }}</div>
+			 </a>
 		</li>
 		{% else %}
 		<li class="next disabled">

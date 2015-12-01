@@ -4,7 +4,7 @@
 	<!-- Enable responsive viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="baidu-site-verification" content="2XMQAJIGe2" />
-	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 	{% if site.model == 'pub' %}
 		<link rel="stylesheet" href="{{ site.pub.css }}monokai.css">
@@ -19,7 +19,7 @@
 		<link rel="stylesheet" href="{{ site.dev.css }}default.css">
 		<link rel="stylesheet" href="{{ site.dev.css }}font-awesome.min.css"/>
 	{% endif %}
-	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 	{% if site.model == 'pub' %}
 		<link rel="icon" href="{{ site.pub.image }}favicon.ico" type="image/x-icon">
 	{% else %}
