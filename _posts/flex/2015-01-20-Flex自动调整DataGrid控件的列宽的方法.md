@@ -16,7 +16,7 @@ public function autoSetDataGridWidth(dataGrid:DataGrid,
 	//setingType为设置类型，0为不可调整表格整体宽度，1为可调整表格整体宽度
 	//lengthFix为表格宽度的修正，数值越大表格越宽，推荐数值为0.0-1.5，默认字号，表格内容为纯汉字推荐用1.0
 
-	const DATAGRIDWIDTH:Number = dataGrid.width;//起始和终止的表格宽度，调整列宽不能改变表格宽度
+	const DATA_GRID_WIDTH:Number = dataGrid.width;//起始和终止的表格宽度，调整列宽不能改变表格宽度
 	var gridWidth:Number = 0;//当前表格宽度
 	var dataProvider:IList = dataGrid.dataProvider;
 	var column:GridColumn;
@@ -52,7 +52,7 @@ public function autoSetDataGridWidth(dataGrid:DataGrid,
 
 	if(settingType == 0)//根据当前表格宽度和实际表格宽度的比值，调整各列的列宽
 	{
-		var scale:Number = DATAGRIDWIDTH / gridWidth;
+		var scale:Number = DATA_GRID_WIDTH / gridWidth;
 		for(i=0; i<dataGrid.columnsLength; i++)
 		{
 			column = dataGrid.columns.getItemAt(i) as GridColumn;
