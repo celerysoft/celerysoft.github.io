@@ -2,7 +2,7 @@
 layout: post
 title: JavaScript和Flex的互相调用
 categories: flex
-tag:
+tag: [intro, beginner, jekyll, tutorial]
 ---
 
 最近的工作要在JS中调用Flex的函数，同时也要求在Flex中调用JS的函数，JS和Flex相互间如何进行通信呢？这里需要用到Flex中的ExternalInterface类。

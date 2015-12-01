@@ -5,11 +5,12 @@
 <!--引入导航-->
 {% include header.html %}
 <!--主体内容-->
+<hr color="#FF0000"/>
 <div class="page-content">
     <div class="container-fluid">
     	<div class="row">
-                <div class="col-md-offset-2 col-md-8  main-content">
-                	<div  id="searchpcc">
+                <div class="col-md-offset-2 col-md-8 main-content">
+                	<div  id="celerysoft">
 						<a href="/"><img id="abouthead" src="{{ site.dev.image }}about.png"></a>
 						<p>月下之光 --celerysoft</p>
                 	</div>
@@ -23,6 +24,8 @@
         </div>
     </div>
 </div>
+<!-- 引入百度分享工具 -->
+{% include extends/baidu.html %}
 <!--引入结尾-->
 {% include footer.html %}
 <!--引入脚本-->
