@@ -50,17 +50,6 @@ h1 > a:hover {
     text-decoration: none;
 }
 
-.scroll-top {
-		position: fixed;
-		bottom: 80px;
-		right: 60px;
-		display: none;
-		font-size: 30px;
-		cursor: pointer;
-		opacity: .4;
-		z-index: 199
-}
-
 @media (min-width: 768px) {
     .navbar {
         min-height: 48px;

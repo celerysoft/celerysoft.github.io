@@ -1,0 +1,33 @@
+<!-- 返回页面顶部按钮 -->
+<div class="scroll-top hidden-xs">
+	<i class="fa fa-arrow-circle-up"/>
+	<!-- 如果没有使用奥森图标，可以用 &#8593;（向上箭头）代替， -->
+	<!-- 即把上一行注释，把下一行的注释取消，这并不美观，只能作为权宜之计 -->
+	<!-- &#8593; -->
+</div>
+<style type="text/css">
+.scroll-top {
+		position: fixed;
+		bottom: 80px;
+		right: 80px;
+		display: none;
+		font-size: 56px;
+		cursor: pointer;
+		opacity: 0.9;
+		z-index: 240
+}
+</style>
+<script>
+$(window).scroll(function() {
+	if ($(this).scrollTop() > 100) {
+		$('.scroll-top').fadeIn(200);
+	} else {
+		$('.scroll-top').fadeOut(200);
+	}
+});
+
+$('.scroll-top').bind('click', function(e) {
+	e.preventDefault();
+	$('body, html').animate({scrollTop: 0}, 200);
+});
+</script>
