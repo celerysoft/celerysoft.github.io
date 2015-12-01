@@ -3,25 +3,32 @@
   **/
 
 body {
-    background: #f2f2f2;
-    line-height: 1.5;
-    font-weight: 500;
-    font-family: "Microsoft YaHei","微软雅黑","Helvetica Neue",Helvetica,Arial,sans-serif;
-    margin-top: 75px;
+    background: #F2F2F2;
+    line-height: 1.6;
+    font-weight: 480;
+    font-family: "Microsoft YaHei", "微软雅黑","Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 72px;
 }
+
 pre {
     padding: 0px;
     margin: 0px;
 }
+
 h1, h2, h3, h4 {
-    border-bottom: 1px solid #eee;
+    font-weight: bold;
 }
+
+h1, h2 {
+    border-bottom: 1px solid #CECECE;
+}
+
 h1 {
-    font-size: 22px;
+    font-size: 24px;
 }
 
 h2 {
-    font-size: 19px;
+    font-size: 20px;
 }
 
 h3 {
@@ -37,6 +44,12 @@ a:hover {
     text-decoration: none;
     color: #259;
 }
+
+h1 > a:hover {
+    color: #3e3e3e;
+    text-decoration: none;
+}
+
 .scroll-top {
 		position: fixed;
 		bottom: 80px;
@@ -48,77 +61,62 @@ a:hover {
 		z-index: 199
 }
 
-h1 > a:hover {
-    color: #3e3e3e;
-    text-decoration: none;
-}
-
-#headerimg {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    width: 20px;
-    height: 20px;
-}
-
 @media (min-width: 768px) {
     .navbar {
-        min-height: 50px;
+        min-height: 48px;
     }
     .navbar-nav {
         float: right;
     }
     .navbar-nav > li > a {
-        font-size: 13px;
-        padding-bottom: 15px;
-        padding-top: 15px;
+        font-size: 14px;
+        padding-bottom: 16px;
+        padding-top: 16px;
     }
     .navbar-brand {
-        height: 50px;
-        line-height: 50px;
+        font-size: 16px;
+        height: 48px;
+        line-height: 48px;
         padding-bottom: 0;
         padding-top: 0;
     }
 }
 
+#headerimg {
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    width: 32px;
+    height: 32px;
+}
+
 .navbar-toggle {
     background: #FFF;
 }
+
 .navbar-toggle .icon-bar  {
     background: #000;
 }
+
 .header-about {
     text-align: center;
     background: #FFF;
-    border-radius: 3px;
-
+    border-radius: 2px;
 }
 
 .header {
     background-image: none;
     background: #FFFFFF;
     border-radius: 0px;
-    border-width: 0px 3px 3px 0px;
-    border-color: #CECECE
+    border-width: 0px 4px 4px 0px;
+    border-color: #CECECE;
+    border-style: solid;
 }
 
 .fa {
     color: #3e3e3e;
 }
 
-.desc-post {
-    background: #FFF;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-.desc-post h1 {
-    padding-top: 10px;
-    font-size: 18px;
-    padding-bottom: 10px;
-}
 .pagenav {
     float: right;
 }
@@ -126,6 +124,7 @@ h1 > a:hover {
     float: right;
     margin-right: 20px;
 }
+
 /*post页面样式*/
 .post {
     background: #FFF;
@@ -161,7 +160,6 @@ h1 > a:hover {
     margin-bottom: 10px;
 }
 
-
 /*页脚样式*/
 footer p {
     margin-top: 10px;
@@ -169,6 +167,7 @@ footer p {
     text-align: center;
 	  font-size: 14px;
 }
+
 footer a {
     text-decoration: none;
     color: blue;
@@ -181,14 +180,12 @@ footer a {
 
 
 /*category*/
+.category h1,h2 {
+    padding-bottom: 5px;
+}
 
 .category h2 {
     font-size: 16px;
-}
-
-.category h1,h2 {
-    padding-bottom: 5px;
-
 }
 
 .category li {
@@ -215,8 +212,26 @@ footer a {
     font-size: 12px;
 }
 
+/** index **/
 .desc {
-    font-size: 12px;
+    font-size: 14px;
+}
+
+.desc-post {
+    background: #FFF;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-top: 0px;
+    margin-top: 16px;
+    border-radius: 0px;
+    border-width: 2px 4px 4px 2px;
+    border-color: #CECECE;
+    border-style: solid;
+}
+
+.desc-post h1 {
+    padding-bottom: 8px
 }
 
 .desc a:link {
@@ -232,6 +247,7 @@ footer a {
 .desc a:active {
     text-decoration: none;
 }
+
 /*read*/
 .about h2 {
     font-size: 16px;
@@ -247,13 +263,13 @@ footer a {
     text-shadow: .5px .5px .5px #FFF;
 }
 #abouthead {
-    width: 100px;
-    height: 100px;
+    width: 96px;
+    height: 96px;
     margin: 0 auto;
     text-align: center;
-    border-radius: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    border-radius: 48px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 #abouthead:hover {

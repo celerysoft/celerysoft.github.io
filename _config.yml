@@ -1,9 +1,10 @@
-title: celerysoft - 月下之光
-home: celerysoft
+name: 月下之光 － CelerySoft的博客
 email: celerysoft@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://celerysoft.github.io" # the base hostname & protocol for your site
 permalink: /:year:month:day.html
+
+# Paginate
 gems: [jekyll-paginate]
 paginate: 8
 paginate_path: "page:num"

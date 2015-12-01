@@ -6,7 +6,7 @@ permalink: /about/
 
 ## 个人简介
 目前专注Android开发，Material Design狂热分子
-憧憬iOS开发，有机会期待进入该领域
+憧憬iOS开发，期待有机会进入该领域
 热爱编程并且享受编程
 开源爱好者，轻度代码洁癖
 
