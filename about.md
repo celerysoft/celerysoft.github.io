@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 ## 个人简介
-目前专注Android开发，Material Design狂热分子
+目前专注Android开发，Material Design癌患者
 憧憬iOS开发，期待有机会进入该领域
 热爱编程并且享受编程
 开源爱好者，轻度代码洁癖
@@ -14,24 +14,26 @@ permalink: /about/
 个人邮箱：<a href="mailto:{{ site.user.email }}">{{ site.user.email }}</a>
 GitHub：[{{ site.user.github }}]({{ site.user.github }})
 新浪微博：[{{ site.user.weibo }}]({{ site.user.weibo }})
-<a href="http://weibo.com/u/1674427185?s=6uyXnP" target="blank"><img border="0" src="http://service.t.sina.com.cn/widget/qmd/1674427185/acf6b5a8/1.png"/>
+<a href="http://weibo.com/u/1674427185?s=6uyXnP" target="blank">
+<img border="0" src="http://service.t.sina.com.cn/widget/qmd/1674427185/acf6b5a8/1.png"/>
 
+## 我的标签
 <div>
-	<h2>我的标签</h2>
-		<p>
-	    <button class='btn btn-default btn-sm'>Android</button>
-	    <button class='btn btn-default btn-sm'>Java</button>
-	    <button class='btn btn-default btn-xs'>iOS</button>
-			<button class='btn btn-default btn-xs'>Objective-C</button>
-	    <button class='btn btn-default btn-xs'>Flex</button>
-	    <button class='btn btn-default btn-xs'>C++</button>
-		</p>
-		<p>
+	<p>
+		<button class='btn btn-default btn-sm'>Android</button>
+	  <button class='btn btn-default btn-sm'>Java</button>
+	  <button class='btn btn-default btn-xs'>iOS</button>
+		<button class='btn btn-default btn-xs'>Objective-C</button>
+	  <button class='btn btn-default btn-xs'>Flex</button>
+	  <button class='btn btn-default btn-xs'>C++</button>
+	</p>
+	<p>
 		<button class='btn btn-default btn-sm'>Git</button>
 		<button class='btn btn-default btn-xs'>SQLite</button>
 		<button class='btn btn-default btn-xs'>Sketch</button>
-		</p>
+	</p>
 </div>
-<h2>留言板</h2>
+
+## 留言板
 
 {% include extends/disqus.html %}
