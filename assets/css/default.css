@@ -37,7 +37,7 @@ h3 {
 
 a {
     text-decoration: none;
-    color: #3e3e3e;
+    color: #3E3E3E;
 }
 
 a:hover {
@@ -46,7 +46,7 @@ a:hover {
 }
 
 h1 > a:hover {
-    color: #3e3e3e;
+    color: #3E3E3E;
     text-decoration: none;
 }
 
@@ -103,18 +103,50 @@ h1 > a:hover {
 }
 
 .fa {
-    color: #3e3e3e;
+    color: #3E3E3E;
 }
 
 .pagenav {
     float: right;
 }
+
 .readmore {
     float: right;
     margin-right: 20px;
 }
 
-/*post页面样式*/
+/** page页面样式 **/
+.page {
+    background: #FFF;
+    padding: 20px;
+    padding-top: 4px;
+    margin-left: -10px;
+    margin-right: -10px;
+    /*-webkit-box-shadow: 0px 0px 30px #d3d3d3 ;*/
+    /*-moz-box-shadow: 0px 0px 30px #d3d3d3;*/
+    /*box-shadow: 0px 0px 30px #d3d3d3;*/
+}
+
+.page-title {
+    padding-bottom: 10px;
+}
+
+.page-content a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #3E3E3E;
+}
+
+.page img {
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 5px #e3e3e3;
+    -moz-box-shadow: 0px 0px 5px #e3e3e3 ;
+    box-shadow: 0px 0px 5px #e3e3e3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/** post页面样式 **/
 .post {
     background: #FFF;
     padding: 20px;
@@ -168,7 +200,7 @@ footer a {
 }
 
 
-/*category*/
+/** category **/
 .category h1,h2 {
     padding-bottom: 5px;
 }
@@ -186,7 +218,7 @@ footer a {
     font-size: 12px;
 }
 
-/*archive*/
+/** archive **/
 .archive h2 {
     font-size: 16px;
 }
@@ -202,11 +234,11 @@ footer a {
 }
 
 /** index **/
-.desc {
+.index {
     font-size: 14px;
 }
 
-.desc-post {
+.index-post {
     background: #FFF;
     padding-left: 16px;
     padding-right: 16px;
@@ -219,30 +251,22 @@ footer a {
     border-style: solid;
 }
 
-.desc-post h1 {
+.index-post h1 {
     padding-bottom: 8px
 }
 
-.desc a:link {
+.index a:link {
     text-decoration: none;
 }
 
-.desc a:visited {
+.index a:visited {
     text-decoration: none;
 }
-.desc a:hover {
+.index a:hover {
     text-decoration: none;
 }
-.desc a:active {
+.index a:active {
     text-decoration: none;
-}
-
-/*read*/
-.about h2 {
-    font-size: 16px;
-}
-.about h1,h2 {
-    padding-bottom: 5px;
 }
 
 #celerysoft {
@@ -251,6 +275,7 @@ footer a {
 #celerysoft p {
     text-shadow: .5px .5px .5px #FFF;
 }
+
 #abouthead {
     width: 96px;
     height: 96px;
@@ -280,11 +305,15 @@ footer a {
     font-style: italic;
 }
 
-
-.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
   z-index: 2;
-  color: #fff;
+  color: #FFFFFFF;
   cursor: default;
-  background-color: #3e3e3e;
-  border-color: #3e3e3e;
+  background-color: #3E3E3E;
+  border-color: #3E3E3E;
 }

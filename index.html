@@ -3,11 +3,11 @@ layout: default
 ---
 <!-- 文章列表，开始 -->
 {% for post in paginator.posts %}
-<article class="desc-post">
+<article class="index-post">
 	<!--标题-->
 	<a href="{{ site.BASE_PATH }}{{ post.url }}"><h1>{{ post.title }}</h1></a>
 
-	<div class="desc">
+	<div class="index">
 		<!-- 作者姓名 -->
 		<i class="fa fa-user"></i>
 		{% if post.author %}

@@ -7,8 +7,8 @@ title: 404 - Page not found
 
 <a href="/">
 {% if site.model == 'pub' %}
-  <img src="{{ site.pub.image }}404.jpg" style="width: 800;">
+  <img src="{{ site.pub.image }}404.jpg" min-width="800">
 {% else %}
-  <img src="{{ site.dev.image }}404.jpg" style="width: 800;">
+  <img src="{{ site.dev.image }}404.jpg" min-width="800">
 {% endif %}
 </a>

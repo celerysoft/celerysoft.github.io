@@ -9,6 +9,7 @@ permalink: /category/
 	{% if categories_list.first[0] == null %}
 	{% else %}
 		{% for category in categories_list %}
+		<article class="index-post">
 			<h2>
 				<i class="fa fa-folder-open-o fa-fw"></i>
 				{{ category[0] | capitalize }}
@@ -27,6 +28,7 @@ permalink: /category/
 				{% endif %}
 			{% endfor %}
 			{% assign pages_list = nil %}
+			</article>
 		{% endfor %}
 	{% endif %}
 	{% assign categories_list = nil %}
