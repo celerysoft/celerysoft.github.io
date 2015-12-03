@@ -88,12 +88,14 @@ document.addEventListener('touchend', touchEndFunc, false);
 
 /* 返回顶部按钮，开始 */
 $(window).scroll(function() {
-  if ($(this).scrollTop() > 100) {
+	var currentScrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+  //if ($(this).scrollTop() > 100) {
+	if (currentScrollTop > 100) {
     $('.scroll-top').fadeIn(200);
 		$('.scroll-top-mobile').fadeIn(200);
   } else {
     $('.scroll-top').fadeOut(200);
-		$('.scroll-top-mobile').fadeIn(200);
+		$('.scroll-top-mobile').fadeOut(200);
   }
 });
 /* 返回顶部按钮，结束 */
