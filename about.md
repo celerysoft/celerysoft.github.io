@@ -1,7 +1,6 @@
 ---
 layout: page
 title: 关于我
-metatag: 关于我
 permalink: /about/
 ---
 

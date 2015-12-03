@@ -1,7 +1,6 @@
 ---
 layout: page
 title: 归档
-metatag: 归档
 permalink: /archive/
 ---
 
