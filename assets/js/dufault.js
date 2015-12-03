@@ -64,11 +64,11 @@ function touchMoveFunc(e) {
   }
   // Actionbar
   if (currentScrollTop - mobileScrollTop > 20) {
-    $('.navbar-top').fadeIn(200);
-		$('.navbar-top').style.visibility="hidden";
+    $('.navbar').fadeIn(200);
+		$('.navbar').style.visibility="hidden";
   } else if (currentScrollTop - mobileScrollTop < 20) {
-    $('.navbar-top').fadeOut(200);
-		$('.navbar-top').style.visibility="visible";
+    $('.navbar').fadeOut(200);
+		$('.navbar').style.visibility="visible";
   }
 }
 
@@ -90,8 +90,10 @@ document.addEventListener('touchend', touchEndFunc, false);
 $(window).scroll(function() {
   if ($(this).scrollTop() > 100) {
     $('.scroll-top').fadeIn(200);
+		$('.scroll-top-mobile').fadeIn(200);
   } else {
     $('.scroll-top').fadeOut(200);
+		$('.scroll-top-mobile').fadeIn(200);
   }
 });
 /* 返回顶部按钮，结束 */

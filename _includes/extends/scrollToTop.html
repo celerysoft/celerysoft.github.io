@@ -1,9 +1,9 @@
 <!-- 返回页面顶部按钮 -->
-<div class="scroll-top hidden-xs">
+<div class="scroll-top hidden-sm">
 	<i class="fa fa-arrow-circle-up"/></i>
-	<!-- 如果没有使用奥森图标，可以用 &#8593;（向上箭头）代替， -->
-	<!-- 即把上一行注释，把下一行的注释取消，这并不美观，只能作为权宜之计 -->
-	<!-- &#8593; -->
+</div>
+<div class="scroll-top-mobile visible-sm">
+	<i class="fa fa-arrow-circle-up"/></i>
 </div>
 <style type="text/css">
 .scroll-top {
@@ -16,7 +16,28 @@
 		opacity: 0.9;
 		z-index: 240
 }
+.scroll-top-mobile {
+		position: fixed;
+		bottom: 16px;
+		right: 16px;
+		display: none;
+		font-size: 40px;
+		cursor: pointer;
+		opacity: 0.9;
+		z-index: 240
+}
 </style>
 <script>
-
+$('.scroll-top').bind('click', function(e) {
+  e.preventDefault();
+  $('body, html').animate({
+    scrollTop: 0
+  }, 200);
+});
+$('.scroll-top-mobile').bind('click', function(e) {
+  e.preventDefault();
+  $('body, html').animate({
+    scrollTop: 0
+  }, 200);
+});
 </script>
