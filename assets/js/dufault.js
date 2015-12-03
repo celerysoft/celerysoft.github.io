@@ -57,18 +57,16 @@ function touchMoveFunc(e) {
   // 返回顶部按钮
   if (currentScrollTop > 100) {
 		$('.scroll-top').fadeIn(200);
-    $('.scroll-top').style.visibility="hidden";
+		$('.scroll-top-mobile').fadeIn(200);
   } else {
     $('.scroll-top').fadeOut(200);
-		$('.scroll-top').style.visibility="visible";
+		$('.scroll-top-mobile').fadeOut(200);
   }
   // Actionbar
   if (currentScrollTop - mobileScrollTop > 20) {
     $('.navbar').fadeIn(200);
-		$('.navbar').style.visibility="hidden";
   } else if (currentScrollTop - mobileScrollTop < 20) {
     $('.navbar').fadeOut(200);
-		$('.navbar').style.visibility="visible";
   }
 }
 
@@ -90,9 +88,10 @@ document.addEventListener('touchend', touchEndFunc, false);
 $(window).scroll(function() {
 	var currentScrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
   //if ($(this).scrollTop() > 100) {
-	if (currentScrollTop > 100) {
-    $('.scroll-top').fadeIn(200);
+	if (currentScrollTop > 400) {
 		$('.scroll-top-mobile').fadeIn(200);
+    $('.scroll-top').fadeIn(200);
+
   } else {
     $('.scroll-top').fadeOut(200);
 		$('.scroll-top-mobile').fadeOut(200);

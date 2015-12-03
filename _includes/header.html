@@ -18,10 +18,14 @@
 			{% if page.title.size < 3 %}
 			<span class="navbar-brand visible-xs">{{ page.title }}</span>
 			{% else %}
-			<span class="navbar-brand visible-xs">文章</span>
+				{% if page.title == site.name %}
+				<span class="navbar-brand visible-xs">首页</span>
+				{% else %}
+				<span class="navbar-brand visible-xs">文章</span>
+				{% endif %}
 			{% endif %}
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -29,7 +33,7 @@
 				</button>
 			</div>
 
-			<div id="navbar" class="navbar-collapse">
+			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/">首页</a></li>
 					<li><a href="/archive/">归档</a></li>
