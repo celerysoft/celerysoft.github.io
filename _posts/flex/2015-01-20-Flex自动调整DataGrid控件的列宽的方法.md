@@ -1,5 +1,6 @@
 ---
 layout: post
+metatag: post
 title: Flex自动调整DataGrid控件的列宽的方法
 categories: Flex
 tags: [Flex, DataGrid, 自适应]

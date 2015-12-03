@@ -1,9 +1,13 @@
 ---
 layout: default
 title: 月下之光 － CelerySoft的博客
+metatag: 首页
 ---
 <!-- 文章列表，开始 -->
 {% for post in paginator.posts %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6">
 <article class="index-post">
 	<!--标题-->
 	<a href="{{ site.BASE_PATH }}{{ post.url }}"><h1>{{ post.title }}</h1></a>
@@ -54,7 +58,13 @@ title: 月下之光 － CelerySoft的博客
 		<p>{{ post.content }}</p>
 	{% endif %}
 </article>
+	{% if forloop.index | modulo:2 != 0  %}
+		</div>
+	{% else %}
+		<div class="clearfix visible-md"></div>
+	{% endif %}
 {% endfor %}
+</div>
 <!-- 文章列表，结束 -->
 
 <!-- 页码，开始 -->
@@ -137,5 +147,6 @@ title: 月下之光 － CelerySoft的博客
 		</li>
 		{% endif %}
 	</ul>
+</div>
 </div>
 <!-- 页码，结束 -->

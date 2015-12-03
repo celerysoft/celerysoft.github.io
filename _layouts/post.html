@@ -1,99 +1,88 @@
 ---
 layout: default
 ---
-<div class="post">
-	<!--文章标题和说明-->
-	<header>
-		<!--文章名称-->
-		<h1 class="post-title">{{ page.title }}</h1>
-		<!--文章发布时间、分类和标签-->
-		<p class="post-desc">
-			<!-- 时间 -->
-			<i class="fa fa-calendar"></i>
-			&nbsp;
-			{{ page.date | date: "%Y/%m/%d" }}
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<!-- 分类 -->
-			<i class="fa fa-folder-open-o "></i>
-			&nbsp;
-			<a href="/category/">{{ page.categories }}</a>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<!-- 标签 -->
-			<tag class="post-tag">
-			{% if page.tags.size > 0 %}
-    		{% capture tags_content %}
-					{% if page.tags.size == 1 %}
-						<i class="fa fa-tag"></i>
-					{% else %}
-						<i class="fa fa-tags"></i>
-					{% endif %}
-					&nbsp;
-					{% for tag in page.tags %}
-						<a href="/tag/">{{ tag }}</a>
-						{% if forloop.last == false %},&nbsp;{% endif %}
-					{% endfor %}
-				{% endcapture %}
-			{{ tags_content }}
-			{% endif %}
-			</tag>
-			<hr/>
-		</p>
-	</header>
+<div class="container">
+	<div class="row">
+		<div class="col-md-0 col-lg-2"></div>
+		<div class="col-md-12 col-lg-8 post">
+			<!--文章标题和说明-->
+			<header>
+				<!--文章名称-->
+				<h1 class="post-title">{{ page.title }}</h1>
+				<!--文章发布时间、分类和标签-->
+				<p class="post-desc">
+					<!-- 时间 -->
+					<i class="fa fa-calendar"></i> &nbsp; {{ page.date | date: "%Y/%m/%d" }} &nbsp;&nbsp;&nbsp;&nbsp;
+					<!-- 分类 -->
+					<i class="fa fa-folder-open-o "></i> &nbsp;
+					<a href="/category/">{{ page.categories }}</a> &nbsp;&nbsp;&nbsp;&nbsp;
+					<!-- 标签 -->
+					<tag class="post-tag">
+						{% if page.tags.size > 0 %} {% capture tags_content %} {% if page.tags.size == 1 %}
+						<i class="fa fa-tag"></i> {% else %}
+						<i class="fa fa-tags"></i> {% endif %} &nbsp; {% for tag in page.tags %}
+						<a href="/tag/">{{ tag }}</a> {% if forloop.last == false %},&nbsp;{% endif %} {% endfor %} {% endcapture %} {{ tags_content }} {% endif %}
+					</tag>
+					<hr/>
+				</p>
+			</header>
 
-	<!--文章内容-->
-	<article class="post-content">
-		{{ content }}
-	</article>
+			<!--文章内容-->
+			<article class="post-content">
+				{{ content }}
+			</article>
 
-	<!-- 文章版权 -->
-	<copyright class="post-copyright">
-		<hr/> 除非另有声明，本博客所有文章采用的授权方式为
-		<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">
-			<b>自由转载-非商用-非衍生-保持署名</b>
-		</a>
-		，转载请务必注明出处，谢谢。
-		<hr/>
-	</copyright>
+			<!-- 文章版权 -->
+			<copyright class="post-copyright">
+				<hr/> 除非另有声明，本博客所有文章采用的授权方式为
+				<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">
+					<b>自由转载-非商用-非衍生-保持署名</b>
+				</a>
+				，转载请务必注明出处，谢谢。
+				<hr/>
+			</copyright>
 
-	<!--上下翻页-->
-	<ul class="pager pagination-sm">
-		<!--前一页-->
-		{% if page.previous %}
-		<li class="previous">
-			<a href="{{ site.BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">
-				<i class="fa fa-arrow-left"></i>
-				<span>Previous</span>
-				<div>{{ page.previous.title }}</div>
-			</a>
-		</li>
-		{% else %}
-		<li class="previous disabled">
-			<a>
-				<i class="fa fa-arrow-left"></i>
-				<span>Previous</span>
-			</a>
-		</li>
-		{% endif %}
+			<!--上下翻页-->
+			<ul class="pager pagination-sm">
+				<!--前一页-->
+				{% if page.previous %}
+				<li class="previous">
+					<a href="{{ site.BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">
+						<i class="fa fa-arrow-left"></i>
+						<span>Previous</span>
+						<div>{{ page.previous.title }}</div>
+					</a>
+				</li>
+				{% else %}
+				<li class="previous disabled">
+					<a>
+						<i class="fa fa-arrow-left"></i>
+						<span>Previous</span>
+					</a>
+				</li>
+				{% endif %}
 
-		<!--下一页-->
-		{% if page.next %}
-		<li class="next">
-			<a href="{{ site.BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">
-				<span>Next</span>
-				<i class="fa fa-arrow-right"></i>
-				<div>{{ page.next.title }}</div>
-			</a>
-		</li>
-		{% else %}
-		<li class="next disabled">
-			<a>
-				<span>Next</span>
-				<i class="fa fa-arrow-right"></i>
-			</a>
-		</li>
-		{% endif %}
-	</ul>
-	<!--引入评论-->
-	<h2>文章评论</h2>
-	{% include extends/disqus.html %}
+				<!--下一页-->
+				{% if page.next %}
+				<li class="next">
+					<a href="{{ site.BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">
+						<span>Next</span>
+						<i class="fa fa-arrow-right"></i>
+						<div>{{ page.next.title }}</div>
+					</a>
+				</li>
+				{% else %}
+				<li class="next disabled">
+					<a>
+						<span>Next</span>
+						<i class="fa fa-arrow-right"></i>
+					</a>
+				</li>
+				{% endif %}
+			</ul>
+			<!--引入评论-->
+			<h2>文章评论</h2>
+			{% include extends/disqus.html %}
+		</div>
+	</div>
 </div>

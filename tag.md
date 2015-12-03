@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 标签
+metatag: 标签
 permalink: /tag/
 ---
 

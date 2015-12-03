@@ -56,16 +56,16 @@ function touchMoveFunc(e) {
   var currentScrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
   // 返回顶部按钮
   if (currentScrollTop > 100) {
-		$('.scroll-top').fadeIn(200);
+		//$('.scroll-top').fadeIn(200);
 		$('.scroll-top-mobile').fadeIn(200);
   } else {
-    $('.scroll-top').fadeOut(200);
+    //$('.scroll-top').fadeOut(200);
 		$('.scroll-top-mobile').fadeOut(200);
   }
   // Actionbar
-  if (currentScrollTop - mobileScrollTop > 20) {
+  if (currentScrollTop - mobileScrollTop < 20) {
     $('.navbar').fadeIn(200);
-  } else if (currentScrollTop - mobileScrollTop < 20) {
+  } else if (currentScrollTop - mobileScrollTop > 20) {
     $('.navbar').fadeOut(200);
   }
 }
@@ -87,14 +87,10 @@ document.addEventListener('touchend', touchEndFunc, false);
 /* 返回顶部按钮，开始 */
 $(window).scroll(function() {
 	var currentScrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-  //if ($(this).scrollTop() > 100) {
 	if (currentScrollTop > 400) {
-		$('.scroll-top-mobile').fadeIn(200);
     $('.scroll-top').fadeIn(200);
-
   } else {
     $('.scroll-top').fadeOut(200);
-		$('.scroll-top-mobile').fadeOut(200);
   }
 });
 /* 返回顶部按钮，结束 */

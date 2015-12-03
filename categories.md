@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 分类
+metatag: 分类
 permalink: /category/
 ---
 

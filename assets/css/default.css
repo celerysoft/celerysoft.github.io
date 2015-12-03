@@ -98,9 +98,65 @@ h1 > a:hover {
 .pagenav {
   float: right;
 }
-.readmore {
-  float: right;
-  margin-right: 20px;
+
+/** index **/
+
+.index {
+  font-size: 14px;
+}
+.index-post {
+  background: #FFF;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  padding-top: 0px;
+  margin-top: 16px;
+  border-radius: 0px;
+  border-width: 2px 4px 4px 2px;
+  border-color: #CECECE;
+  border-style: solid;
+}
+.index-post h1 {
+  padding-bottom: 8px
+}
+.index a:link {
+  text-decoration: none;
+}
+.index a:visited {
+  text-decoration: none;
+}
+.index a:hover {
+  text-decoration: none;
+}
+.index a:active {
+  text-decoration: none;
+}
+#celerysoft {
+  text-align: center;
+}
+#celerysoft p {
+  text-shadow: .5px .5px .5px #FFF;
+}
+#abouthead {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 48px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+#abouthead:hover {
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 /** page页面样式 **/
@@ -181,13 +237,24 @@ h1 > a:hover {
 
 /*页脚样式*/
 
-footer p {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.copyright {
+  margin-top: 8px;
+  margin-bottom: 8px;
   text-align: center;
   font-size: 14px;
 }
-footer a {
+.copyright a {
+  text-decoration: none;
+  color: blue;
+}
+.copyright-mobile {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  line-height: 1.0;
+  text-align: center;
+  font-size: 10px;
+}
+.copyright-mobile a {
   text-decoration: none;
   color: blue;
 }
@@ -230,65 +297,6 @@ footer a {
   font-size: 12px;
 }
 
-/** index **/
-
-.index {
-  font-size: 14px;
-}
-.index-post {
-  background: #FFF;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 16px;
-  padding-top: 0px;
-  margin-top: 16px;
-  border-radius: 0px;
-  border-width: 2px 4px 4px 2px;
-  border-color: #CECECE;
-  border-style: solid;
-}
-.index-post h1 {
-  padding-bottom: 8px
-}
-.index a:link {
-  text-decoration: none;
-}
-.index a:visited {
-  text-decoration: none;
-}
-.index a:hover {
-  text-decoration: none;
-}
-.index a:active {
-  text-decoration: none;
-}
-#celerysoft {
-  text-align: center;
-}
-#celerysoft p {
-  text-shadow: .5px .5px .5px #FFF;
-}
-#abouthead {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto;
-  text-align: center;
-  border-radius: 48px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-#abouthead:hover {
-  -moz-transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  -moz-transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
 .notice {
   font-size: 12px;
   text-align: center;

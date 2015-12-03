@@ -7,22 +7,16 @@
   {% include header.html %}
   <!--主体内容-->
   <div class="page-content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-offset-4 col-md-4 main-content">
-          <div id="celerysoft">
-            <a href="/">
-              <img id="abouthead" src="{{ site.dev.image }}about.png">
-            </a>
-            <p>月下之光，遇见更大的世界。</p>
-          </div>
-        </div>
+
+      <div id="celerysoft">
+        <a href="/">
+          <img id="abouthead" src="{{ site.dev.image }}about.png">
+        </a>
+        <p>月下之光，遇见更大的世界。</p>
       </div>
 
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 main-content">
+      <div>
           {{ content }}
-        </div>
       </div>
     </div>
   </div>

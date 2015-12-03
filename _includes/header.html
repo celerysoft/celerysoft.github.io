@@ -14,19 +14,19 @@
 			</span>
 			<a class="navbar-brand hidden-xs" href="/">{{ site.name }}</a>
 
-			<a class="navbar-brand visible-xs" href="/"><i class="fa fa-home"></i></a>
-			{% if page.title.size < 3 %}
-			<span class="navbar-brand visible-xs">{{ page.title }}</span>
+			<a class="navbar-brand visible-xs" href="/"><i class="fa fa-home fa-lg fa-fw"></i></a>
+			{% if page.metatag == 'post' %}
+			<span class="navbar-brand visible-xs">文章</span>
 			{% else %}
-				{% if page.title == site.name %}
-				<span class="navbar-brand visible-xs">首页</span>
-				{% else %}
-				<span class="navbar-brand visible-xs">文章</span>
-				{% endif %}
+			<span class="navbar-brand visible-xs">{{ page.metatag }}</span>
 			{% endif %}
-			<div class="navbar-header visible-xs">
-				<i type="button" class="navbar-toggle fa fa-bars" data-toggle="collapse" data-target="#navbar">
-				</i>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+					<span class="sr-only">切换导航栏</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 			</div>
 
 			<div id="navbar" class="collapse navbar-collapse">

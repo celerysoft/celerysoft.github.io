@@ -1,16 +1,21 @@
 ---
 layout: default
 ---
-<div class="page">
-	<!--页面标题-->
-	<header>
-		<div>
-			<h1 class="page-title">{{ page.title }}</h1>
-		</div>
-	</header>
+<div class="container">
+	<div class="row">
+		<div class="col-md-0 col-lg-2"></div>
+		<div class="col-md-12 col-lg-8 page">
+			<!--页面标题-->
+			<header>
+				<div>
+					<h1 class="page-title">{{ page.title }}</h1>
+				</div>
+			</header>
 
-	<!--页面内容-->
-	<article class="page-content">
-		{{ content }}
-	</article>
+			<!--页面内容-->
+			<article class="page-content">
+				{{ content }}
+			</article>
+		</div>
+	</div>
 </div>
