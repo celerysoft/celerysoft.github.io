@@ -3,23 +3,6 @@ $(document).ready(function() {
   $('.page img').addClass('img-responsive');
 });
 
-/* 返回顶部按钮，开始 */
-$(window).scroll(function() {
-  if ($(this).scrollTop() > 100) {
-    $('.scroll-top').fadeIn(200);
-  } else {
-    $('.scroll-top').fadeOut(200);
-  }
-});
-
-$('.scroll-top').bind('click', function(e) {
-  e.preventDefault();
-  $('body, html').animate({
-    scrollTop: 0
-  }, 200);
-});
-/* 返回顶部按钮，结束 */
-
 /* 下滑滚动导航菜单，上滑显示导航菜单开始 */
 // pc端
 $(window).scroll(function() {
@@ -73,15 +56,19 @@ function touchMoveFunc(e) {
   var currentScrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
   // 返回顶部按钮
   if (currentScrollTop > 100) {
-    $('.scroll-top').fadeIn(200);
+		$('.scroll-top').fadeIn(200);
+    $('.scroll-top').style.visibility="hidden";
   } else {
     $('.scroll-top').fadeOut(200);
+		$('.scroll-top').style.visibility="visible";
   }
   // Actionbar
   if (currentScrollTop - mobileScrollTop > 20) {
     $('.navbar-top').fadeIn(200);
+		$('.navbar-top').style.visibility="hidden";
   } else if (currentScrollTop - mobileScrollTop < 20) {
     $('.navbar-top').fadeOut(200);
+		$('.navbar-top').style.visibility="visible";
   }
 }
 
@@ -98,3 +85,13 @@ document.addEventListener('touchstart', touchSatrtFunc, false);
 document.addEventListener('touchmove', touchMoveFunc, false);
 document.addEventListener('touchend', touchEndFunc, false);
 /* 下滑滚动导航菜单，上滑显示导航菜单结束 */
+
+/* 返回顶部按钮，开始 */
+$(window).scroll(function() {
+  if ($(this).scrollTop() > 100) {
+    $('.scroll-top').fadeIn(200);
+  } else {
+    $('.scroll-top').fadeOut(200);
+  }
+});
+/* 返回顶部按钮，结束 */
