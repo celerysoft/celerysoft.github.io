@@ -32,6 +32,10 @@ GitHub：[{{ site.user.github }}]({{ site.user.github }})
 		<button class='btn btn-default btn-xs'>SQLite</button>
 		<button class='btn btn-default btn-xs'>Sketch</button>
 	</p>
+	<p>
+		<button class='btn btn-default btn-sm'>Windows</button>
+		<button class='btn btn-default btn-sm'>Mac OS</button>
+	</p>
 </div>
 
 ## 留言板
