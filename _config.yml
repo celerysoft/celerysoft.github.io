@@ -2,11 +2,11 @@ name: 月下之光 － CelerySoft的博客
 email: celerysoft@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://celerysoft.github.io" # the base hostname & protocol for your site
-permalink: /:year:month:day.html
+permalink: /post/:year:month:day.html
 
 # Paginate
 gems: [jekyll-paginate]
-paginate: 8
+paginate: 6
 paginate_path: "page:num"
 
 # Build settings
@@ -49,3 +49,6 @@ dev:
 
 # 选择模式 开发模式还是发布模式。上线之前务必改成pub！
 model: pub
+
+encoding: utf-8
+exclude: [README.md, LICENSE]

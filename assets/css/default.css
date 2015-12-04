@@ -104,6 +104,9 @@ h1 > a:hover {
 .index {
   font-size: 14px;
 }
+.index-post-desc {
+  border-bottom: 1px solid #CECECE;
+}
 .index-post {
   background: #FFF;
   padding-left: 16px;
