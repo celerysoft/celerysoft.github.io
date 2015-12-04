@@ -1,6 +1,5 @@
 ---
 layout: post
-metatag: post
 title: JavaScript和Flex的互相调用
 categories: Flex
 tags: [JavaScript, Flex, 互相调用]

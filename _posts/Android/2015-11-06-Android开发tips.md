@@ -1,6 +1,5 @@
 ---
 layout: post
-metatag: post
 title: Android开发tips
 categories: Android
 tags: [Android, 开发, tips, 小贴士]

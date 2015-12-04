@@ -27,6 +27,10 @@ user:
   github: http://github.com/celerysoft
   weibo: http://weibo.com/celerysoft
 
+css: /assets/css/
+js: /assets/js/
+image: /assets/images/
+postimage: /assets/images/post/
 # 这里替换成线上的静态资源的链接。 主要最后的"/"。也要注意css使用的字体的链接。
 #pub:
 #  css: http://7xjddt.com1.z0.glb.clouddn.com/
