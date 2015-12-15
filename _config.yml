@@ -1,55 +1,50 @@
-name: 月下之光 － CelerySoft的博客
-404pagename: 404 - Page not found
+# Site settings
+title: 攸溟的个人博客
 email: celerysoft@gmail.com
+description: > #攸溟的个人博客
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://celerysoft.github.io" # the base hostname & protocol for your site
-permalink: /post/:year:month:day.html
+twitter_username: celerysoft@gmail.com
+github_username:  celerysoft
 
 # Paginate
 gems: [jekyll-paginate]
-paginate: 6
 paginate_path: "page:num"
+paginate: 10                #分页时每页博文数量
 
 # Build settings
-highlighter: pygments
-markdown: kramdown  # [ maruku | rdiscount | kramdown | redcarpet ]
-
-kramdown:
-  input:          GFM
-  auto_ids:       true
-  auto_id_prefix: 'id-'
-
-# 网站描述
-description:  一个90后程序猿的博客，邮箱：celerysoft@gmail.com
-
-user:
-  name: celerysoft
+markdown: kramdown
+permalink: /:year-:month-:day.html   #博文的固定链接
+author:                                     #自定义常亮
+  name: 攸溟
   email: celerysoft@gmail.com
-  github: http://github.com/celerysoft
+  link: http://celerysoft.github.io/
   weibo: http://weibo.com/celerysoft
+  github: http://github.com/celerysoft
 
-css: /assets/css/
-js: /assets/js/
-image: /assets/images/
-postimage: /assets/images/post/
-# 这里替换成线上的静态资源的链接。 主要最后的"/"。也要注意css使用的字体的链接。
-#pub:
-#  css: http://7xjddt.com1.z0.glb.clouddn.com/
-#  js: http://7xjddx.com1.z0.glb.clouddn.com/
-#  image: http://7xjddm.com1.z0.glb.clouddn.com/
-pub:
-  css: /assets/css/
-  js: /assets/js/
-  image: /assets/images/
+# avatar头像及Favicon
+#avatar: https://avatars1.githubusercontent.com/u/5010799?v=3&amp;s=460
+avatar: favicon.ico
+#favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
 
-# 这里是本地的静态资源存放的路径
-dev:
-  css: /assets/css/
-  js: /assets/js/
-  image: /assets/images/
+locals:                                     #自定义常量
+  tags: 标签
+  about: 关于
+active: 技术                                 #自定义常量
+subscribe_rss: /pages/atom.xml              #订阅地址
+#markdown: redcarpet                         #markdown解释器
 
-# 选择模式 开发模式还是发布模式。上线之前务必改成pub！
-model: pub
+# google analytics 设置
+#ga:
+#  id:
+#  url:
+#
 
-encoding: utf-8
-exclude: [README.md, LICENSE]
+# baidu analytics 设置
+
+ba:
+  src: //hm.baidu.com/hm.js?22d94317cfb9f9e0bb476228d9f79278
+
+# disqus 设置
+disqus:
+  shortname: celerysoft

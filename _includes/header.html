@@ -1,54 +1,22 @@
-<header>
-	<!--导航菜单-->
-	<nav class="navbar header navbar-fixed-top">
-		<div class="container-fluid">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="baidu-site-verification" content="w9Akh6dPe4" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<!--[if lte IE 8]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
 
-			<!-- Desktop -->
-			<span class="navbar-brand hidden-xs">
-				<a href="/about/">
-				{% if site.model == 'pub' %}
-					<img id="headerimg" src="{{ site.pub.image }}header.jpeg">
-				{% else %}
-					<img id="headerimg" src="{{ site.dev.image }}header.jpeg">
-				{% endif %}
-				</a>
-			</span>
-			<a class="navbar-brand hidden-xs" href="/">{{ site.name }}</a>
-			<!-- Desktop -->
+<title>{{ page.title }} | {{ site.title }}</title>
+<meta name="author" content="{{ site.author.name }}">
+{% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords }}">
+{% endif %}
 
-			<!-- Mobile -->
-			<a class="navbar-brand visible-xs" href="/"><i class="fa fa-home fa-lg fa-fw"></i></a>
-			{% if page.title == site.name %}
-			<span class="navbar-brand visible-xs">首页</span>
-			{% elsif page.notfound %}
-			<span class="navbar-brand visible-xs">错误</span>
-			{% elsif page.title.size > 3 %}
-			<span class="navbar-brand visible-xs">文章</span>
-			{% else %}
-			<span class="navbar-brand visible-xs">{{ page.title }}</span>
-			{% endif %}
+{% if page.description  %}
+  <meta name="description " content="{{ page.description  }}">
+{% endif %}
 
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-					<span class="sr-only">切换导航栏</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-			<!-- Mobile -->
+<link rel="shortcut icon" href="{{ site.favicon }}" />
+<link rel="icon" href="{{ site.favicon }}" type="image/x-icon">
 
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="/">首页</a></li>
-					<li><a href="/archive/">归档</a></li>
-					<li><a href="/category/">分类</a></li>
-					<li><a href="/tags/">标签</a></li>
-					<li><a href="/about/">关于</a></li>
-					<li><a href="/rss/">RSS</a></li>
-				</ul>
-			</div>
+<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 
-		</div>
-	</nav>
-</header>
+<link href="/pages/rss.xml" rel="alternate" title="{{site.title}}" type="application/atom+xml">

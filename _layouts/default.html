@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-{% include head.html %}
-<!--引入脚本-->
-{% include script.html %}
-<body>
-  <!--引入导航-->
-  {% include header.html %}
-  <!--主体内容-->
-  <div class="page-content">
+<html>
+  <head>
+    {% include header.html %}
+  </head>
+  <body>
+    {% include nav.html %}
+    <div id="post">
+      <div id="pjax">
+        {{ content }}
+        {% include copyright.html %}
+      </div> <!-- end #pjax -->
 
-      <div id="celerysoft">
-        <a href="/">
-          <img id="abouthead" src="{{ site.dev.image }}about.png">
-        </a>
-        <p>月下之光，遇见更大的世界。</p>
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">章节列表</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
       </div>
+    </div> <!-- end #post -->
 
-      <div>
-          {{ content }}
-      </div>
-    </div>
-  </div>
-  <!-- 引入百度分享工具 -->
-  {% include extends/baidu.html %}
-  <!--引入结尾-->
-  {% include footer.html %}
-  <!-- 引入返回顶部按钮 -->
-  {% include extends/scrollToTop.html %}
-</body>
+    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+    <button id="scroll-top"><span id="icon-arrow-up" class="fontello"></span></button>
+    {% include scripts.html %}
 
-</html>
+
+    {% include baiduanalytics.html %}
+   </body>
+   <footer>
+     {% include cnzz.html %}
+   </footer>
+ </html>
