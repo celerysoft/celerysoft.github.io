@@ -5,11 +5,14 @@ layout: default
 <article id="post__content">
     <h1 id="post__title" data-identifier="{{ page.date | date: "%Y%m%d" }}">{{ page.title }}</h1>
     {{ content }}
-    <div class="declare">
-        <div>
-
-        </div>
-    </div>
+    <declare id="declare" class="declare">
+      <hr/> 除非另有声明，本博客所有文章采用的授权方式为
+      <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">
+        <b>自由转载-非商用-非衍生-保持署名</b>
+      </a>
+      ，转载请务必注明出处，谢谢。
+      <hr/>
+    </declare>
 </article>
 <!-- end #post__content -->
 

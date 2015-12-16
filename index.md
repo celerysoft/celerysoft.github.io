@@ -1,9 +1,13 @@
 ---
 layout: page
-title: 关于我
+title: 月下之光 - 攸溟的个人博客
+---
 ---
 
+分享一些技术文章，分享一些生活琐事，希望你会喜欢。
+
 ## 个人简介
+
 目前专注Android开发，Material Design癌患者  
 憧憬iOS开发，期待有机会进入该领域  
 热爱编程并且享受编程  
@@ -38,5 +42,5 @@ GitHub：[{{ site.author.github }}]({{ site.author.github }})
 </div>
 
 ## 留言板
-
+---
 {% include disqus.html %}

@@ -17,6 +17,16 @@ description:
 
 ![](http://www.xuanfengge.com/wp-content/uploads/2013/12/emmet.gif)
 
+输入hugo new site mysite生成一个mysite文件夹
+  文件结构为
+  
+  > * archetypes
+  > * content
+  > * data
+  > * layouts
+  > * static
+  > config.toml
+
 ````
 
 ** 1. 嵌套操作

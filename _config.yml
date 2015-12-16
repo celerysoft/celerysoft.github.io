@@ -15,7 +15,8 @@ paginate: 10                #分页时每页博文数量
 # Build settings
 markdown: kramdown
 permalink: /:year-:month-:day.html   #博文的固定链接
-author:                                     #自定义常亮
+
+author:
   name: 攸溟
   email: celerysoft@gmail.com
   link: http://celerysoft.github.io/
@@ -30,7 +31,7 @@ avatar: favicon.ico
 locals:                                     #自定义常量
   tags: 标签
   about: 关于
-active: 技术                                 #自定义常量
+  active: 技术                                 #自定义常量
 subscribe_rss: /pages/atom.xml              #订阅地址
 #markdown: redcarpet                         #markdown解释器
 
@@ -42,8 +43,8 @@ subscribe_rss: /pages/atom.xml              #订阅地址
 
 # baidu analytics 设置
 
-ba:
-  src: //hm.baidu.com/hm.js?22d94317cfb9f9e0bb476228d9f79278
+#ba:
+#  src: //hm.baidu.com/hm.js?22d94317cfb9f9e0bb476228d9f79278
 
 # disqus 设置
 disqus:

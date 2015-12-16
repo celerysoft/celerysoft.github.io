@@ -7,7 +7,7 @@ tags: [Flex, DataGrid, 自适应]
 
 在Flex API中，DataGrid（表格）控件的列宽并不能根据单元格的内容来自动调整，所以只能自己动手了，以下是方法：
 
-```ActionScript
+{% highlight JavaScript linenos %}
 public function autoSetDataGridWidth(dataGrid:DataGrid,
                                     lengthFix:Number=0,
                                     settingType:uint=0):void
@@ -64,6 +64,6 @@ public function autoSetDataGridWidth(dataGrid:DataGrid,
 		dataGrid.width = gridWidth;
 	}
 }
-```
+{% endhighlight %}
 
 该方法效率不太高，需要遍历所有的内容，在表格内容很庞大的情况下不推荐使用。
