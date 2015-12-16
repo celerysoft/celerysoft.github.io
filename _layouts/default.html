@@ -4,6 +4,9 @@
     {% include header.html %}
   </head>
   <body>
+    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+    <button id="scroll-top"><span id="icon-arrow-up" class="fontello"></span></button>
+
     {% include nav.html %}
     <div id="post">
       <div id="pjax">
@@ -20,15 +23,7 @@
         </div>
       </div>
     </div> <!-- end #post -->
-
-    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
-    <button id="scroll-top"><span id="icon-arrow-up" class="fontello"></span></button>
     {% include scripts.html %}
 
-
-    {% include baiduanalytics.html %}
    </body>
-   <footer>
-     {% include cnzz.html %}
-   </footer>
  </html>

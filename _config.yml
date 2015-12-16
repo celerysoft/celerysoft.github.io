@@ -37,17 +37,6 @@ subscribe_rss: /pages/atom.xml              #订阅地址
 
 image: /assets/image/
 
-# google analytics 设置
-#ga:
-#  id:
-#  url:
-#
-
-# baidu analytics 设置
-
-#ba:
-#  src: //hm.baidu.com/hm.js?22d94317cfb9f9e0bb476228d9f79278
-
 # disqus 设置
 disqus:
   shortname: celerysoft
