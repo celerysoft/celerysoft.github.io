@@ -495,11 +495,11 @@ iframe {
   bottom: 64px;
   right: 16px;
   z-index: 98;
-  -webkit-transform: translateX(-280px);
-  -moz-transform: translateX(-280px);
-  -ms-transform: translateX(-280px);
-  -o-transform: translateX(-280px);
-  transform: translateX(280px);
+  -webkit-transform: translateX(300px);
+  -moz-transform: translateX(300px);
+  -ms-transform: translateX(300px);
+  -o-transform: translateX(300px);
+  transform: translateX(300px);
   -webkit-transition: -webkit-transform .35s ease-in-out .1s;
   -moz-transition: -moz-transform .35s ease-in-out .1s;
   -ms-transition: -ms-transform .35s ease-in-out .1s;
@@ -507,32 +507,25 @@ iframe {
   transition: transform .35s ease-in-out .1s;
 }
 #post__toc-trigger:hover {
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
+    -webkit-transform: translateX(16.5px);
+    -moz-transform: translateX(16.5px);
+    -ms-transform: translateX(16.5px);
+    -o-transform: translateX(16.5px);
+    transform: translateX(16.5px);
 }
-@media screen and (max-device-width: 1280px) {
+
+@media screen and (max-width: 1280px) {
   #post__toc-trigger {
-    -webkit-transform: translateX(280px);
-    -moz-transform: translateX(-280px);
-    -ms-transform: translateX(-280px);
-    -o-transform: translateX(-280px);
-    transform: translateX(-280px);
-    -webkit-transition: -webkit-transform .35s ease-in-out .1s;
-    -moz-transition: -moz-transform .35s ease-in-out .1s;
-    -ms-transition: -ms-transform .35s ease-in-out .1s;
-    -o-transition: -o-transform .35s ease-in-out .1s;
-    transition: transform .35s ease-in-out .1s;
+    visibility: hidden;
+    display: none;
   }
 }
 #post__toc-trigger.fullscreen {
-  -webkit-transform: translateX(0px);
-  -moz-transform: translateX(0px);
-  -ms-transform: translateX(0px);
-  -o-transform: translateX(0px);
-  transform: translateX(0px);
+  -webkit-transform: translateX(16.5px);
+  -moz-transform: translateX(16.5px);
+  -ms-transform: translateX(16.5px);
+  -o-transform: translateX(16.5px);
+  transform: translateX(16.5px);
   -webkit-transition: -webkit-transform .35s ease-in-out .1s;
   -moz-transition: -moz-transform .35s ease-in-out .1s;
   -ms-transition: -ms-transform .35s ease-in-out .1s;
@@ -694,16 +687,20 @@ iframe {
 /*---------------------------------*\
    Fullscreen Style
 \*---------------------------------*/
-@media screen and (min-device-width: 1281px) {
+@media screen and (min-width: 1281px) {
   #sidebar.fullscreen {
-    margin-left: -585px; } }
-@media screen and (max-device-width: 1280px) {
+    margin-left: -585px;
+  }
+}
+@media screen and (max-width: 1280px) {
   #sidebar.fullscreen {
     -webkit-transform: translateX(-585px);
     -moz-transform: translateX(-585px);
     -ms-transform: translateX(-585px);
     -o-transform: translateX(-585px);
-    transform: translateX(-585px); } }
+    transform: translateX(-585px);
+  }
+}
 
 #pjax.fullscreen {
   max-width: 800px;

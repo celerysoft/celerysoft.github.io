@@ -13,6 +13,7 @@ paginate_path: "page:num"
 paginate: 10                #分页时每页博文数量
 
 # Build settings
+highlighter: pygments
 markdown: kramdown
 permalink: /:year-:month-:day.html   #博文的固定链接
 

@@ -9,7 +9,9 @@
 /* Modified by Celey Qin @ 16 Dec 2015 for Java */
 /* Code blocks */
 .highlight {
-  margin: 1.715em 0; }
+  margin: 1.715em 0;
+  color: white;
+}
 
 pre {
   padding: 1em;
