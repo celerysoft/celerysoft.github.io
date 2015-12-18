@@ -199,23 +199,6 @@ a {
     border-top: 1px solid #525965;
     float: left; }
 
-#icon-email {
-  /*border-right: 1px solid #626262; */}
-  #icon-email:before {
-    content: "\e800"; }
-
-#icon-feed {
-  border-right: 1px solid #626262; }
-  #icon-feed:before {
-    content: "\e802"; }
-
-#icon-github {
-    border-right: 1px solid #626262; }
-#icon-github:before {
-    content: "\e805"; }
-
-
-
 .tags-btn {
   color: #a6a6a7;
   -webkit-transition: color .3s, background .3s;
@@ -233,7 +216,7 @@ a {
 #posts-list {
   width: 420px;
   height: 100%;
-  background: rgba(250, 250, 250, 0.95);
+  background: rgba(250, 250, 250, 0.99);
   border-right: 1px solid #e5e8ec;
   float: left;
   position: relative;
@@ -248,20 +231,20 @@ a {
 
 #search-form {
   width: 100%;
-  height: 65px;
+  height: 64px;
   border-bottom: 1px solid #e5e8ec; }
   @media screen and (max-width: 585px) {
     #search-form {
-      height: 51px;
+      height: 48px;
       display: -webkit-flex;
       display: flex; } }
 
 #mobile-avatar {
-  width: 50px;
-  height: 50px;
-  -webkit-background-size: 50px 50px;
-  -moz-background-size: 50px 50px;
-  background-size: 50px 50px;
+  width: 48px;
+  height: 48px;
+  -webkit-background-size: 48px 48px;
+  -moz-background-size: 48px 48px;
+  background-size: 48px 48px;
   display: none; }
   @media screen and (max-width: 585px) {
     #mobile-avatar {
@@ -313,16 +296,18 @@ a {
   left: 0;
   right: -1px;
   -webkit-overflow-scrolling: touch; }
-  #pl__container::-webkit-scrollbar {
+#pl__container::-webkit-scrollbar {
     width: 1px; }
-  #pl__container::-webkit-scrollbar-thumb {
+#pl__container::-webkit-scrollbar-thumb {
     background: transparent; }
-  #pl__container:hover::-webkit-scrollbar-thumb {
+#pl__container:hover::-webkit-scrollbar-thumb {
     background: #c8ced6; }
-  @media screen and (max-width: 585px) {
-    #pl__container {
-      font-size: 15px;
-      top: 50px; } }
+@media screen and (max-width: 585px) {
+  #pl__container {
+    font-size: 15px;
+    top: 48px;
+    }
+}
 
 .pl__all {
   margin: 4px 12px;
@@ -598,7 +583,8 @@ iframe {
   margin-bottom: 24px;
   border-bottom: 2px solid rgba(229, 232, 236, 0.5);
   position: relative; }
-  #post__share > .fontello, #post__share > .post__toc-li:before {
+
+#post__share > .fontello, #post__share > .post__toc-li:before {
     display: block;
     width: 40px;
     height: 40px;
@@ -616,39 +602,73 @@ iframe {
     -moz-transition: color .35s, box-shadow .35s;
     -ms-transition: color .35s, box-shadow .35s;
     -o-transition: color .35s, box-shadow .35s;
-    transition: color .35s, box-shadow .35s; }
+    transition: color .35s, box-shadow .35s;
+}
 
     #post__share > .fontello:hover, #post__share > .post__toc-li:hover:before {
       box-shadow: 0 0 0 2px rgba(125, 139, 153, 0.15); }
 
-    .share-info{
-        text-align: center;
-        top: 10px;
-        left: -160px;
-        position: relative;
-        color: rgb(133, 176, 255);
-        font-size: 14px;
-    }
+.share-info {
+  width: 48px;
+  margin:auto;
+  text-align: center;
+  font-weight: bold;
+  top: -8px;
+  position: relative;
+  color: rgb(133, 176, 255);
+  font-size: 14px;
+
+  box-shadow: 0 0 7px 7px transparent;
+  -webkit-transition: color .35s, box-shadow .35s;
+  -moz-transition: color .35s, box-shadow .35s;
+  -ms-transition: color .35s, box-shadow .35s;
+  -o-transition: color .35s, box-shadow .35s;
+  transition: color .35s, box-shadow .35s;
+}
+.share-info:hover {
+  color: rgb(255, 176, 133);
+  box-shadow: 0 0 0 2px rgba(125, 139, 153, 0.15);
+}
+
+#icon-github {
+  border-right: 1px solid #626262;
+}
+#icon-github:before {
+  content: "\e805";
+}
+#icon-github:hover {
+  color: #FFFFFF;
+}
+
+#icon-feed {
+  border-right: 1px solid #626262;
+}
+#icon-feed:before {
+  content: "\e802";
+}
+#icon-feed:hover {
+  color: #00FF00;
+}
+
+#icon-email {
+  /*border-right: 1px solid #626262; */
+}
+#icon-email:before {
+    content: "\e800";
+}
+#icon-email:hover {
+  color: #FF0000;
+}
 
 
 #icon-twitter {
   margin-left: -90px;
 }
-#icon-twitter:hover {
-  color: #4099ff;
-}
 #icon-twitter:before {
   content: "\e807";
 }
-
-#icon-cc {
-  margin-left: -20px;
-}
-#icon-cc:hover {
-  color: #f8ce5e;
-}
-#icon-cc:before {
-  content: "\e805";
+#icon-twitter:hover {
+  color: #4099ff;
 }
 
 #icon-weibo {
@@ -742,8 +762,8 @@ iframe {
 }
 @media screen and (max-width: 585px) {
   #js-fullscreen {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     top: 0;
     right: 0;
     border-radius: 0;
@@ -816,8 +836,8 @@ iframe {
 }
 @media screen and (max-width: 585px) {
   #scroll-top {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     top: 0;
     right: 0;
     border-radius: 0;
