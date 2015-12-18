@@ -7,16 +7,21 @@ url: "http://celerysoft.github.io" # the base hostname & protocol for your site
 twitter_username: celerysoft@gmail.com
 github_username:  celerysoft
 
-# Paginate
+# Paginate（分页）
 gems: [jekyll-paginate]
 paginate_path: "page:num"
-paginate: 10                #分页时每页博文数量
+# 分页时每页博文数量
+paginate: 10
 
 # Build settings
+# 语法高亮
 highlighter: pygments
+# markdown解释器
 markdown: kramdown
-permalink: /:year-:month-:day.html   #博文的固定链接
+#博文的链接样式
+permalink: /:year-:month-:day.html
 
+# 博客作者相关
 author:
   name: 攸溟
   email: celerysoft@gmail.com
@@ -24,19 +29,27 @@ author:
   weibo: http://weibo.com/celerysoft
   github: http://github.com/celerysoft
 
-# avatar头像及Favicon
-#avatar: https://avatars1.githubusercontent.com/u/5010799?v=3&amp;s=460
-avatar: favicon.ico
-#favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
 
 locals:                                     #自定义常量
   tags: 标签
   about: 关于
   active: 技术                                 #自定义常量
 subscribe_rss: /pages/atom.xml              #订阅地址
-#markdown: redcarpet                         #markdown解释器
 
+# 头像
+avatar: /assets/image/favicon.ico
+# 网站CSS路径
+css: /assets/css/
+#css: http://7xpapo.com1.z0.glb.clouddn.com/css/
+# 网站JS路径
+js: /assets/js/
+#js: http://7xpapo.com1.z0.glb.clouddn.com/js/
+# 网站图片路径
 image: /assets/image/
+#js: http://7xpapo.com1.z0.glb.clouddn.com/image/
+# 博文图片路径
+postimage: http://7xpapo.com1.z0.glb.clouddn.com/
+#postimage: /assets/postImages/
 
 # disqus 设置
 disqus:

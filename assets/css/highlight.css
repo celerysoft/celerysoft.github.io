@@ -49,6 +49,12 @@ pre .lineno {
   background: #343434;
   color: #b1b1b1;
   border-right: 0px solid #b1b1b1;
+  -moz-user-select: -moz-none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 /* code zone with line */
 pre .code {
