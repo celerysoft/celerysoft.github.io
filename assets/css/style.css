@@ -99,7 +99,7 @@ a {
   height: 100%;
   background: #474d57;
   border-right: 1px solid #3c4149;
-  box-shadow: inset -15px 0 15px -15px #222;
+  box-shadow: inset -15px 0 15px -15px #222222;
   float: left;
   position: relative;
   -webkit-user-select: none;
@@ -116,7 +116,7 @@ a {
   height: 100px;
   margin: 55px auto 35px;
   border-radius: 50%;
-  box-shadow: 0 0 0px 4px white, 0 0 4px 4px #eee;
+  box-shadow: 0 0 0px 4px #aaaaaa, 0 0 4px 4px #3c4149;
   background-repeat: no-repeat;
   background-size: 100px 100px;
   overflow: hidden;
@@ -127,7 +127,8 @@ a {
     -moz-animation: spin .35s linear ;
     -ms-animation: spin .35s linear ;
     -o-animation: spin .35s linear ;
-    animation: spin .35s linear infinite;
+    animation: spin .35s linear ;
+    /*animation: spin .35s linear infinite;*/
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   #avatar {
@@ -432,10 +433,14 @@ h1, h2, h3, h4, h5, h6 {
   #post__content a:hover {
     text-decoration: underline; }
 #post__content img {
-  max-width: 100%;
-  max-height: 500px;
+  max-width: 760px;
+  max-height: 100%;
   border: 2px solid #e5e8ec;
   border-radius: 5px; }
+
+#post__content img[alt="2in1row"] {
+  max-width: 370px;
+}
 
 #post__discuss {
   text-align: center;
@@ -723,7 +728,7 @@ iframe {
 }
 
 #pjax.fullscreen {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto; }
 
 #js-fullscreen, #nprogress .spinner-icon {

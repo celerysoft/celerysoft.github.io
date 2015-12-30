@@ -95,8 +95,8 @@ pre > code {
   color: black;
   font: .85em Consolas, Monaco, 'Andale Mono', monospace;
   background: #EFEFEF;
-  border: 1px solid black;
-  border-radius: .25em;
+  /*border: 1px solid black;
+  border-radius: .25em;*/
   vertical-align: 0px; }
 
 .highlight .c {
