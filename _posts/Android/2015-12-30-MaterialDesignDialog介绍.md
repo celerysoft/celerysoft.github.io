@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Material Design Dialog简介
-categories: Other
-tags: [Android, Material Design， Dialog]
+categories: Android
+tags: [Android, Material Design, Dialog]
 ---
 
 Material Design的推出，最主要的受益群体，我觉得是广大的独立开发者。无数的独立开发者，坐拥无数的好点子，无奈开发出来的App不够精致，导致无人问津。辛亏，谷歌发布了Material Design，只要按照这个标注来设计自己的App，成品一般都不会难看。
