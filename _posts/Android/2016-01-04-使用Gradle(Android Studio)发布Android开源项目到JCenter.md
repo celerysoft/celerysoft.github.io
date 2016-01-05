@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 使用Gradle(Android Studio)发布Android开源项目到JCenter
+title: 使用Gradle(Android Studio)发布Android开源项目到jCenter
 categories: Android
-tags: [Gradle, Jcenter, 发布]
+tags: [Gradle, jCenter, 发布]
 ---
 
 使用Android Studio进行Android开发的时候，有些第三方库的引用只需要一句话

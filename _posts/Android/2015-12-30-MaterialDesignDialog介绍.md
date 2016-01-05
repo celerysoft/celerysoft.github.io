@@ -19,7 +19,17 @@ Material Design中关于Dialog的设计规范：[http://www.google.com/design/sp
 
 ![2in1row]( {{ site.postimage }}2015123001.png)![2in1row]( {{ site.postimage }}2015123002.png)![2in1row]( {{ site.postimage }}2015123003.png)
 
-使用方法很简单，额，也不算很简单，因为我没上传到jcenter，所以你必须把源码编译之后再集成进你的现有项目里，具体的不多说了，说说怎么用吧。
+## 添加到项目中
+
+引用方法很简单，修改项目文件夹下的**build.gradle**文件，在dependencies里添加一句
+
+{% highlight Bash %}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    ...
+    compile 'com.celerysoft:materialdesigndialog:1.0.1'
+}
+{% endhighlight %}
 
 ## 实例
 
