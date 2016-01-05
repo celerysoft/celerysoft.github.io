@@ -1099,3 +1099,23 @@ iframe {
   animation: spin 400ms linear infinite; }
 
 /* index.html */
+
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th{
+    border:1px solid #aeaeae;
+    padding: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+td{
+    border:1px dashed #aeaeae;
+    padding: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
