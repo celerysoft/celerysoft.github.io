@@ -11,13 +11,13 @@ tags: [亚马逊, AWS, 长城]
 
 ## 一、注册AWS
 
-首先，到[http://aws.amazon.com/cn/](http://aws.amazon.com/cn/)注册，如果你以前有亚马逊账号，直接登录就好。一路下来资料照填，用中文即可。需要注意的是，注册过程需要绑定信用卡，说好是免费的，怎么还要绑定信用卡扣费呢？所谓免费，就是在你没有用超的情况下，这个在后面有分析，先不管。绑定信用卡应该会扣两笔钱，都是1美元，一笔是预授权，一笔应该是押金，1年后会返还，如果超限使用，顺便用着1美金抵扣。
+首先，到[http://aws.amazon.com/cn/](http://aws.amazon.com/cn/)注册，如果你以前有亚马逊账号，直接登录就好。一路下来资料照填，用中文即可。需要注意的是，注册过程需要绑定信用卡，说好是免费的，怎么还要绑定信用卡扣费呢？所谓免费，就是在你没有用超的情况下（作为Shadowsocks服务器，唯一能超限使用的就是网络流量，每月15G流量）。绑定信用卡应该会扣两笔钱，都是1美元，一笔是预授权，一笔应该是押金，1年后会返还，如果超限使用，顺便用着1美金抵扣。
 
 注册完会需要输入你的手机号，AWS会拨通你的手机号，让你输入一个数字完成注册，我第一次没接到电话，重试了一遍就好了。
 
 ## 二、创建AWS实例
 
-用刚才注册好的账号登录AWS控制台[https://ap-northeast-1.console.aws.amazon.com/console/](https://ap-northeast-1.console.aws.amazon.com/console/)，点击EC2（云中的虚拟服务器）
+用刚才注册好的账号登录[AWS控制台](https://ap-northeast-1.console.aws.amazon.com/console/)，点击EC2（云中的虚拟服务器）
 
 ![01]( {{ site.postimage }}2016011501.png)
 
@@ -49,7 +49,10 @@ tags: [亚马逊, AWS, 长城]
 
 定制完成后等几分钟，一般是在给你的服务器进行开发，等初始化完成后，就可以进行远程连接了，右键你的实例，点击连接。会弹出连接提示，如果你使用的是Windows，可以查看[使用 PuTTY 从 Windows 连接到 Linux 实例](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/putty.html?console_help=true)，如果你是Linux或者Mac OS，可以直接通过SSH连接到你的服务器，具体可以查看亚马逊给出的文档[使用 SSH 连接到 Linux 实例](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)。
 
+**记住下图中所示位置这个公有IP，它是你的Shadowssocks的服务器IP。**
+
 ![07]( {{ site.postimage }}2016011507.png)
+
 ![08]( {{ site.postimage }}2016011508.png)
 
 主要说说使用Mac OS系统通过SSH连接到服务器
@@ -60,7 +63,7 @@ tags: [亚马逊, AWS, 长城]
 chmod 400 /Users/Celery/.ssh/celerysoft.pem
 {% endhighlight %}
 
-**/Users/Celery/.ssh/celerysoft.pem**是刚才下载的密钥对.pem文件的路径。
+**/Users/Celery/.ssh/celerysoft.pem** 是刚才下载的密钥对.pem文件的路径。
 
 {% highlight Bash%}
 {% endhighlight %}
@@ -71,9 +74,9 @@ chmod 400 /Users/Celery/.ssh/celerysoft.pem
 ssh -i /Users/Celery/.ssh/celerysoft.pem ec2-user@ec2-11-111-11-111.ap-northeast-1.compute.amazonaws.com
 {% endhighlight %}
 
-**ec2-user**是用户名，Amazon Linux AMI默认的是ec2-user，
+**ec2-user** 是用户名，Amazon Linux AMI默认的是ec2-user，
 
-**ec2-11-111-11-111.ap-northeast-1.compute.amazonaws.com**是你的服务器的公有DNS，这些信息右键点击你的实例，点击连接，弹出的提示框里都写着。
+**ec2-11-111-11-111.ap-northeast-1.compute.amazonaws.com** 是你的服务器的公有DNS，这些信息右键点击你的实例，点击连接，弹出的提示框里都写着。
 
 登录成功后，你能看到如下响应信息：
 
@@ -89,6 +92,8 @@ Are you sure you want to continue connecting (yes/no)?
 遇到任何问题，都可以查阅亚马逊的[帮助文档](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/AccessingInstances.html?console_help=true)。
 
 ## 三、在服务器安装及配置Shadowsocks
+
+任何关于配置和安装Shadowsocks的说明，可以查阅[Shadowsocks的项目Wiki](https://github.com/shadowsocks/shadowsocks/wiki)。
 
 ### 安装Shadowsocks
 
@@ -145,7 +150,7 @@ sudo vim /etc/shadowsocks/config.json
 
 "server":"0.0.0.0",
 
-"server_port":1234,
+"server_port":443,
 
 "local_address":"127.0.0.1",
 
@@ -164,9 +169,17 @@ sudo vim /etc/shadowsocks/config.json
 }
 {% endhighlight %}
 
-**server_port**是服务端口号，
-**password**是服务密码，
-**workers**是允许同时在线的终端数，这些请自行修改，其它的保持不变。
+配置文件说明 |
+---------- | ----
+server | 服务端监听地址(IPv4或IPv6)
+server_port | 服务端端口，一般为443
+local_address | 本地监听地址，缺省为127.0.0.1
+local_port | 本地监听端口，一般为1080
+password | 用以加密的密匙
+timeout | 超时时间（秒）
+method | 加密方法，默认为aes-256-cfb，更多请查阅[Encryption](https://github.com/shadowsocks/shadowsocks/wiki/Encryption)
+fast_open | 是否启用[TCP-Fast-Open](https://github.com/shadowsocks/shadowsocks/wiki/TCP-Fast-Open)，true或者false
+workers | [worker数量](https://github.com/shadowsocks/shadowsocks/wiki/Workers)，如果不理解含义请不要改（这个只在Unix和Linux下有用）
 
 ### 启动Shadowsocks服务器
 
@@ -174,10 +187,6 @@ sudo vim /etc/shadowsocks/config.json
 
 {% highlight Bash%}
 sudo ssserver -c /etc/shadowsocks/config.json -d start
-{% endhighlight %}
-
-{% highlight Bash%}
-sudo netstat -tunlp
 {% endhighlight %}
 
 如果想停止Shadowsocks服务，可以这样停止
@@ -192,7 +201,21 @@ sudo ssserver -c /etc/shadowsocks/config.json -d stop
 sudo ssserver -c /etc/shadowsocks/config.json -d restart
 {% endhighlight %}
 
-这样，服务器上的操作就算完成了，接下来改对本地计算机进行操作了。
+### 设置Shadowsocks开机启动
+
+服务器运行久了，偶尔需要重启一下，重启时每次都要手动启动hadowsocks的话就太麻烦了，可以将其加到开机启动项。
+
+{% highlight Bash%}
+sudo vi /etc/rc.local
+{% endhighlight %}
+
+将带有**ssserver**内容的行删除，最后加入
+
+{% highlight Bash%}
+ssserver -c /etc/shadowsocks.json -d start
+{% endhighlight %}
+
+然后保存退出，这样，服务器上的操作就算完成了，接下来改对本地计算机进行操作了。
 
 ## 本地连接至Shadowsocks服务器
 
@@ -205,3 +228,8 @@ sudo ssserver -c /etc/shadowsocks/config.json -d restart
 ![09]( {{ site.postimage }}2016011509.png)
 
 关于Windows下使用Shadowsocks的方法，还请自行搜索，想必也不复杂。
+
+> 参考：
+>
+> 1. [archlinux的Shadowsocks词条](https://wiki.archlinux.org/index.php/Shadowsocks)
+> 2. [Shadowsocks的项目Wiki](https://github.com/shadowsocks/shadowsocks/wiki)
