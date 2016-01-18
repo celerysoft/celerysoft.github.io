@@ -99,6 +99,6 @@ tags: [Shadowsocks, MacOS, Google]
 
 ## 扩展阅读
 
-[Shadowsocks-GUI为用户写的使用说明](https://github.com/shadowsocks/shadowsocks-iOS/wiki/Shadowsocks-for-OSX-帮助)
+[Shadowsocks-GUI作者为用户写的使用说明](https://github.com/shadowsocks/shadowsocks-iOS/wiki/Shadowsocks-for-OSX-帮助)
 
 关于Shadowsocks-GUI For Mac OS的使用指南就是以上这些，Windows的我没用过，所以无法对此妄写些什么，不过应该也是大同小异吧，而且可以预见的是，Windows版的肯定比Mac OS版的功能要多，用起来应该更趁手才是。
