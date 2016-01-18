@@ -219,13 +219,15 @@ ssserver -c /etc/shadowsocks.json -d start
 
 ## 本地连接至Shadowsocks服务器
 
-下载[Shadowsocks GUI客户端](http://sourceforge.net/projects/shadowsocksgui/files/dist/)
+下载[Shadowsocks-GUI客户端](http://sourceforge.net/projects/shadowsocksgui/files/dist/)
 
 安装之后，添加服务器，地址为AWS的外网地址，登录[AWS控制台](https://ap-northeast-1.console.aws.amazon.com/ec2/)，查看正在运行中的实例，找到公有ip。
 端口号为刚才配置Shadowsocks服务器时的端口号，密码也是刚才配置的，设置完之后保存。
-由于Mac Shadowsocks GUI已经集成了系统Pac，所以无需任何额外设置，即可畅游互联网啦。
+由于Shadowsocks-GUI For Mac OS已经集成了系统Pac，所以无需任何额外设置，即可畅游互联网啦。
 
 ![09]( {{ site.postimage }}2016011509.png)
+
+更详细的使用方法，请查看[Shadowsocks-GUI For Mac OS使用指南](http://celerysoft.github.io/2016-01-18.html)。
 
 关于Windows下使用Shadowsocks的方法，还请自行搜索，想必也不复杂。
 
