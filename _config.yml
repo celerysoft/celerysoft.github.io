@@ -8,18 +8,25 @@ twitter_username: celerysoft@gmail.com
 github_username:  celerysoft
 
 # Paginate（分页）
-gems: [jekyll-paginate]
-paginate_path: "page:num"
+#gems: [jekyll-paginate]
 # 分页时每页博文数量
-paginate: 10
+#paginate: 10
+#paginate_path: "page:num"
+
 
 # Build settings
 # 语法高亮
-highlighter: pygments
+#highlighter: pygments
 # markdown解释器
-markdown: kramdown
+#markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+#relative_permalinks: true
 #博文的链接样式
 permalink: /:year-:month-:day.html
+
 
 # 博客作者相关
 author:
