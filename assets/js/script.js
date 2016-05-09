@@ -157,4 +157,8 @@ function afterPjax() {
   check();
   container.scroll(check);
 
+  if (sidebar.hasClass('mobile')) {
+    $('#sidebar, #pjax, #icon-arrow').addClass('fullscreen');
+  }
+
 }afterPjax();
