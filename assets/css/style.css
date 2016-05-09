@@ -755,8 +755,8 @@ iframe {
       margin: 0 auto; } }
 
 #js-fullscreen, #nprogress .spinner-icon {
-  width: 40px;
-  height: 40px; }
+  width: 48px;
+  height: 48px; }
 
 #js-fullscreen, #nprogress .spinner {
   top: 16px;
@@ -1107,8 +1107,8 @@ iframe {
   z-index: 100; }
   @media screen and (max-width: 585px) {
     #nprogress .spinner {
-      top: 5px;
-      right: 5px; } }
+      top: 0px;
+      right: 0px; } }
 
 #nprogress .spinner-icon {
   border: solid 2px transparent;
