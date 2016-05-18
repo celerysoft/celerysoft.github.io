@@ -809,6 +809,11 @@ iframe {
     top: 0;
     right: 0;
     border-radius: 0;
+    box-shadow: 0 0 0 0 transparent;
+  }
+  #js-fullscreen:hover {
+    color: #2eb695;
+    box-shadow: 0 0 0 0 rgba(125, 139, 153, 0.15);
   }
 }
 
@@ -883,6 +888,11 @@ iframe {
     top: 0;
     right: 0;
     border-radius: 0;
+    box-shadow: 0 0 0 0 transparent;
+  }
+  #scroll-top:hover {
+    color: #2eb695;
+    box-shadow: 0 0 0 0 rgba(125, 139, 153, 0.15);
   }
 }
 
