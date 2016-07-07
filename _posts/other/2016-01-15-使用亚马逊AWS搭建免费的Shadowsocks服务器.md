@@ -9,19 +9,19 @@ tags: [亚马逊, AWS, 长城]
 
 当然，你必须有一张信用卡，没有的话，真是无能为力。
 
-## 一、注册AWS
+# 一、注册AWS
 
 首先，到[http://aws.amazon.com/cn/](http://aws.amazon.com/cn/)注册，如果你以前有亚马逊账号，直接登录就好。一路下来资料照填，用中文即可。需要注意的是，注册过程需要绑定信用卡，说好是免费的，怎么还要绑定信用卡扣费呢？所谓免费，就是在你没有用超的情况下（作为Shadowsocks服务器，唯一能超限使用的就是网络流量，每月15G流量）。绑定信用卡应该会扣两笔钱，都是1美元，一笔是预授权，一笔应该是押金，1年后会返还，如果超限使用，顺便用着1美金抵扣。
 
 注册完会需要输入你的手机号，AWS会拨通你的手机号，让你输入一个数字完成注册，我第一次没接到电话，重试了一遍就好了。
 
-## 二、创建AWS实例
+# 二、创建AWS实例
 
 用刚才注册好的账号登录[AWS控制台](https://ap-northeast-1.console.aws.amazon.com/console/)，点击EC2（云中的虚拟服务器）
 
 ![01]( {{ site.postimage }}2016011501.png)
 
-### 定制服务器类型
+## 定制服务器类型
 
 点击启动实例
 
@@ -45,7 +45,7 @@ tags: [亚马逊, AWS, 长城]
 
 ![06]( {{ site.postimage }}2016011506.png)
 
-### 连接到服务器
+## 连接到服务器
 
 定制完成后等几分钟，一般是在给你的服务器进行开发，等初始化完成后，就可以进行远程连接了，右键你的实例，点击连接。会弹出连接提示，如果你使用的是Windows，可以查看[使用 PuTTY 从 Windows 连接到 Linux 实例](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/putty.html?console_help=true)，如果你是Linux或者Mac OS，可以直接通过SSH连接到你的服务器，具体可以查看亚马逊给出的文档[使用 SSH 连接到 Linux 实例](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)。
 
@@ -91,11 +91,11 @@ Are you sure you want to continue connecting (yes/no)?
 
 遇到任何问题，都可以查阅亚马逊的[帮助文档](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/AccessingInstances.html?console_help=true)。
 
-## 三、在服务器安装及配置Shadowsocks
+# 三、在服务器安装及配置Shadowsocks
 
 任何关于配置和安装Shadowsocks的说明，可以查阅[Shadowsocks的项目Wiki](https://github.com/shadowsocks/shadowsocks/wiki)。
 
-### 安装Shadowsocks
+## 安装Shadowsocks
 
 以此输入以下命令来安装Shadowsocks
 
@@ -113,7 +113,7 @@ sudo pip install shadowsocks
 
 仔细看看有没有错误，如无错误即可继续
 
-### 配置Shadowsocks
+## 配置Shadowsocks
 
 在终端输入
 
@@ -181,7 +181,7 @@ method | 加密方法，默认为aes-256-cfb，更多请查阅[Encryption](https
 fast_open | 是否启用[TCP-Fast-Open](https://github.com/shadowsocks/shadowsocks/wiki/TCP-Fast-Open)，true或者false
 workers | [worker数量](https://github.com/shadowsocks/shadowsocks/wiki/Workers)，如果不理解含义请不要改（这个只在Unix和Linux下有用）
 
-### 启动Shadowsocks服务器
+## 启动Shadowsocks服务器
 
 依次输入以下命令来启动Shadowsocks
 
@@ -201,7 +201,7 @@ sudo ssserver -c /etc/shadowsocks/config.json -d stop
 sudo ssserver -c /etc/shadowsocks/config.json -d restart
 {% endhighlight %}
 
-### 设置Shadowsocks开机启动
+## 设置Shadowsocks开机启动
 
 服务器运行久了，偶尔需要重启一下，重启时每次都要手动启动hadowsocks的话就太麻烦了，可以将其加到开机启动项。
 
@@ -212,14 +212,19 @@ sudo vi /etc/rc.local
 将带有**ssserver**内容的行删除，最后加入
 
 {% highlight Bash%}
-ssserver -c /etc/shadowsocks.json -d start
+sudo ssserver -c /etc/shadowsocks.json -d start
 {% endhighlight %}
 
 然后保存退出，这样，服务器上的操作就算完成了，接下来改对本地计算机进行操作了。
 
-## 本地连接至Shadowsocks服务器
+# 本地连接至Shadowsocks服务器
 
 下载[Shadowsocks-GUI客户端](http://sourceforge.net/projects/shadowsocksgui/files/dist/)
+
+当然你也可以到GitHub下载最新的客户端：  
+[Windows客户端下载地址](https://github.com/shadowsocks/shadowsocks-windows/releases)  
+[macOS客户端下载地址](https://github.com/shadowsocks/shadowsocks-iOS/releases)  
+[Linux客户端下载地址](https://github.com/shadowsocks/shadowsocks-qt5/releases)  
 
 安装之后，添加服务器，地址为AWS的外网地址，登录[AWS控制台](https://ap-northeast-1.console.aws.amazon.com/ec2/)，查看正在运行中的实例，找到公有ip。
 端口号为刚才配置Shadowsocks服务器时的端口号，密码也是刚才配置的，设置完之后保存。
