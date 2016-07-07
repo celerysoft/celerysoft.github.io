@@ -412,11 +412,38 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-#post__title {
+#post__content #post__title {
   margin: 0;
   padding-top: 1.1em;
   font-size: 2em;
   text-align: center;
+  color: black;
+  border: 0px;
+  background: #FFFFFF
+}
+
+#post__content > h1 {
+  color: white;
+  background: #49c998;
+  border-left: 16px solid #2A9581;
+  border-left-style: solid;
+  margin-left: -16px;
+  padding-left: 16px;
+  text-shadow: none;
+}
+
+#post__content > h2 {
+  border-left: 16px solid #49c998;
+  border-left-style: solid;
+  padding-left: 16px;
+  text-shadow: none;
+}
+
+#post__content > h3 {
+  border-left: 4px solid #49c998;
+  border-left-style: solid;
+  padding-left: 16px;
+  text-shadow: none;
 }
 
 #post__content > p, #post__content > ul, #post__content > ol {
