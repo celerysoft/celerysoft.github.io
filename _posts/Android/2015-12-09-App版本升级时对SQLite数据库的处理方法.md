@@ -7,7 +7,7 @@ tags: [Android, 开发, SQLite, 升级]
 
 开发App时，随着功能的扩充，最开始设计的数据库肯定会捉襟见肘，原有的数据库结构可能已经不再适应新的功能，这时候，就需要对原有的数据库进行改进了。
 
-## 数据库版本升级
+# 数据库版本升级
 
 我们知道，当用户更新完App启动后，发现新版本的App的数据库版本要高于旧版本的，就会调用`onUpgrade`方法，在数据库版本升级时，我们可能会遇到下面几种情况：
 
@@ -50,7 +50,7 @@ public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 版本4升级到版本5是删除某个表上的字段操作，
 下面分别说说这几种情况的处理方法。
 
-### 1、新建表
+## 1、新建表
 
 {% highlight Java %}
 private void upgradeDatabaseFrom1To2(SQLiteDatabase db) {
@@ -59,18 +59,18 @@ private void upgradeDatabaseFrom1To2(SQLiteDatabase db) {
 }
 {% endhighlight %}
 
-### 2、删除表
+## 2、删除表
 
 {% highlight Java %}
-private void upgradeDatabaseFrom1To2(SQLiteDatabase db) {
+private void upgradeDatabaseFrom2To3(SQLiteDatabase db) {
   db.execSQL("DROP TABLE IF EXISTS android;");
 }
 {% endhighlight %}
 
-### 3、给某个表添加新字段
+## 3、给某个表添加新字段
 
 {% highlight Java %}
-private void upgradeDatabaseFrom1To2(SQLiteDatabase db) {
+private void upgradeDatabaseFrom3To4(SQLiteDatabase db) {
   db.execSQL("ALTER TABLE person ADD COLUMN age TEXT");
   db.execSQL("ALTER TABLE person ADD COLUMN weight TEXT");
 }
@@ -78,13 +78,13 @@ private void upgradeDatabaseFrom1To2(SQLiteDatabase db) {
 
 SQLite对ALTER TABLE的支持比较有限，可以更改表名，或者往表的末尾添加一个新字段。
 
-### 4、删除某个表上的字段
+## 4、删除某个表上的字段
 
 假设原person表有name, sex, age, weight四个字段，需要删除weight字段
 删除一个表上已有的字段，需要重新创建这个表并完成数据迁移
 
 {% highlight Java %}
-private void upgradeDatabaseFrom1To2(SQLiteDatabase db) {
+private void upgradeDatabaseFrom4To5(SQLiteDatabase db) {
   // 创建person的临时表
   db.execSQL("CREATE TEMPORARY TABLE personBackup (name, sex, age);");
   // 储存现有数据到临时表
@@ -105,7 +105,7 @@ private void upgradeDatabaseFrom1To2(SQLiteDatabase db) {
 假设原person表有name, sex, age三个字段，需要增加一个weight字段
 
 {% highlight Java %}
-private void upgradeDatabaseFrom1To2(SQLiteDatabase db) {
+private void upgradeDatabaseFrom4To5(SQLiteDatabase db) {
   // 创建person的临时表
   db.execSQL("CREATE TEMPORARY TABLE personBackup (name, sex, age);");
   // 储存现有数据到临时表
@@ -121,9 +121,9 @@ private void upgradeDatabaseFrom1To2(SQLiteDatabase db) {
 }
 {% endhighlight %}
 
-## 数据库版本降级
+# 数据库版本降级
 
-### 1、舍弃已有的数据并重建表结构
+## 1、舍弃已有的数据并重建表结构
 
 数据库版本升级时，我采用迭代的方法将保证跨版本升级的用户不会在升级时发生错误，但是降级时，假如有三个用户，他们的数据库版本分别处于10，15，20，这三个版本跨度很大，数据库结构大相径庭。我们现在要将数据库版本降级到5，要想完整保留用户数据，只能分别写出从版本10降级到版本5的操作、版本15降级到版本5的操作、版本20降级到版本5的操作，这样非常繁琐，工作量非常大，而且说实话，你除非用文档记录着每个数据库版本的结构，否则根本无法实现精准的数据库降级。
 
@@ -141,6 +141,6 @@ public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 }
 {% endhighlight %}
 
-### 2、不进行降级操作，把所有降级操作都按升级处理
+## 2、不进行降级操作，把所有降级操作都按升级处理
 
 这个很好理解吧，需要废弃什么表，删除什么字段，都按数据库版本升级来处理，还能保留数据。

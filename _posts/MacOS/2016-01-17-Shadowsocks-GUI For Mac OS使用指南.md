@@ -7,7 +7,7 @@ tags: [Shadowsocks, MacOS, Google]
 
 之前介绍了[使用亚马逊AWS搭建免费的Shadowsocks服务器](http://celerysoft.github.io/2016-01-15.html)，但是关于[Shadowsocks-GUI For Mac OS](http://sourceforge.net/projects/shadowsocksgui/files/dist/)的使用指南只是一笔带过，今天就来探讨一下其的具体使用方法。
 
-## 下载安装
+# 下载安装
 
 首先到[Shadowsocks-GUI For Mac OS](http://sourceforge.net/projects/shadowsocksgui/files/dist/)页面下载，选择`.dmg`格式的下载，当然是下最新版啦，安装完成之后运行，在菜单栏就能看到Shadowsocks的图标了。
 
@@ -17,7 +17,7 @@ tags: [Shadowsocks, MacOS, Google]
 
 ![02]( {{ site.postimage }}2016011802.png)
 
-## 添加服务器
+# 添加服务器
 
 从菜单里选择`服务器->打开服务器设定...`来添加Shadowsocks服务器，你可以寻找免费的服务器，或者自己动手，按照[使用亚马逊AWS搭建免费的Shadowsocks服务器](http://celerysoft.github.io/2016-01-15.html)里面写的内容搭建属于自己的Shadowsocks服务器。
 
@@ -31,7 +31,7 @@ tags: [Shadowsocks, MacOS, Google]
 
 ![03]( {{ site.postimage }}2016011803.png)
 
-## 创建自定义规则
+# 创建自定义规则
 
 从菜单可以看到，代理模式有两种：
 
@@ -63,7 +63,7 @@ tags: [Shadowsocks, MacOS, Google]
 
 保存之后，兴冲冲地打开Google.com，发现还是漫长的加载，这是什么情况？别急，你只是把规则写到了用户规则文件`user-rule.txt`，但是并没有写到PAC文件`gfwlist.js`文件里呀，那要如何才能写到PAC文件里呢？简单，在线更新一次PAC文件即可，每次在线更新PAC文件，都会把用户规则文件的内容，写入PAC规则的末尾。
 
-## 找出非常隐蔽的被墙掉的地址
+# 找出非常隐蔽的被墙掉的地址
 
 好了，既然学会了自定义PAC文件，那么，想必应该是配置完毕了吧？当然不是，你有没有遇到过这种情况，明明把指定网址加到PAC里面了，但是打开该网址还是非常缓慢，或者只能看到部分控件，而网页主体始终刷不出来？但是将代理模式切到全局模式，又能正常打开该网页。
 
@@ -71,7 +71,7 @@ tags: [Shadowsocks, MacOS, Google]
 
 其实，虽然目标网址是走了代理，但是目标网址上的一些资源（可能是某些JavaScript、CSS文件），可能是储存在某些被墙掉的地方，但是又没有添加到PAC文件里，所以使用全局代理模式时能轻松打开，但是使用自动代理模式时却又显示不出来，那么，如何解决呢？
 
-### 使用日志来查找
+## 使用日志来查找
 
 从菜单里点击`显示日志...`，其实就是打开系统应用`控制台`，系统日志中所有以 **ShadowsocksX:** 开头的是Shadowsocks的日志，我们再右上角输入`ShadowsocksX`，即可只显示Shadowsocks的日志。我们在全局模式下，刷新一次在自动代理模式下打不开的网页，然后马上切到控制台查看Shadowsocks的日志，看看是否有遗漏没有添加到PAC文件的网址，如图中的`***.cloudfront.net`。
 
@@ -91,13 +91,13 @@ tags: [Shadowsocks, MacOS, Google]
 
 并执行一遍`从GFWList更新PAC文件`，即可。
 
-### 使用浏览器来查找
+## 使用浏览器来查找
 
 当然，可以使用浏览器的开发者工具来查看目标网址所需的网络请求，然后将可以的地址加入到PAC文件即可。
 
 ![05]( {{ site.postimage }}2016011805.png)
 
-## 扩展阅读
+# 扩展阅读
 
 [Shadowsocks-GUI作者为用户写的使用说明](https://github.com/shadowsocks/shadowsocks-iOS/wiki/Shadowsocks-for-OSX-帮助)
 
