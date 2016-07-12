@@ -17,8 +17,7 @@ title: 月下之光 - 攸溟的个人博客
 个人邮箱：<a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>  
 GitHub：[{{ site.author.github }}]({{ site.author.github }})  
 新浪微博：[{{ site.author.weibo }}]({{ site.author.weibo }})  
-<a href="http://weibo.com/u/1674427185?s=6uyXnP" target="blank">
-<img border="0" src="http://service.t.sina.com.cn/widget/qmd/1674427185/acf6b5a8/1.png"/>
+Twitter：[@{{ site.twitter_username }}]({{ site.author.twitter }})  
 
 ## 我的标签
 <div>
@@ -34,10 +33,12 @@ GitHub：[{{ site.author.github }}]({{ site.author.github }})
 		<button class='btn btn-default btn-sm'>Git</button>
 		<button class='btn btn-default btn-xs'>SQLite</button>
 		<button class='btn btn-default btn-xs'>Sketch</button>
+		<button class='btn btn-default btn-xs'>Charles</button>
 	</p>
 	<p>
 		<button class='btn btn-default btn-sm'>Windows</button>
 		<button class='btn btn-default btn-sm'>Mac OS</button>
+		<button class='btn btn-default btn-xs'>Linux</button>
 	</p>
 </div>
 

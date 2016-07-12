@@ -16,7 +16,7 @@ tags: [JavaScript, Flex, 互相调用]
 ## 一、在Flex中调用JavaScript函数
 我不是很懂HTML和JS，所以我是直接在Flex工程中编译生成的bin-debug文件夹下，修改工程生成的html文件，在body标签页之间添加一段JS代码：
 
-{% highlight JavaScript %}
+{% highlight HTML %}
 <script lang="javascript">
   function jsFunction()
   {
@@ -27,7 +27,7 @@ tags: [JavaScript, Flex, 互相调用]
 
 同时，在Flex中，添加一段AS代码来调用该函数：
 
-{% highlight ActionScript3 %}
+{% highlight JavaScript %}
 private function callJS():void
 {
   var numFromJS:Number = ExternalInterface.call("jsFunction");
@@ -39,7 +39,7 @@ private function callJS():void
 ## 二、在JavaScript中调用Flex函数
 首先，在Flex中为将要被调用的Flex函数添加CallBack，建议在Application的creationComplete事件中添加：
 
-{% highlight ActionScript3 %}
+{% highlight JavaScript %}
 private function creationCompleteHandler(event:FlexEvent):void
 {
   ExternalInterface.addCallback("flexFunction", functionInFlex);
@@ -53,7 +53,7 @@ private function functionInFlex():void
 
 在JS中，要调用这个函数，也是很简单，还是直接在Flex工程中编译生成的bin-debug文件夹下，修改工程生成的html文件，在body标签页之间添加一段JS代码：
 
-{% highlight JavaScript %}
+{% highlight HTML %}
 <script lang="javascript">
   function callFlex()
   {

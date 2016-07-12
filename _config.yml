@@ -4,7 +4,7 @@ email: celerysoft@gmail.com
 description: > #攸溟的个人博客
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://celerysoft.github.io" # the base hostname & protocol for your site
-twitter_username: celerysoft@gmail.com
+twitter_username: celerysoft
 github_username:  celerysoft
 
 # Paginate（分页）
@@ -34,7 +34,8 @@ author:
   email: celerysoft@gmail.com
   link: http://celerysoft.github.io/
   weibo: http://weibo.com/celerysoft
-  github: http://github.com/celerysoft
+  github: https://github.com/celerysoft
+  twitter: https://twitter.com/celerysoft
 
 
 locals:                                     #自定义常量
