@@ -4,6 +4,7 @@ layout: default
 
 <article id="post__content">
     <h1 id="post__title" data-identifier="{{ page.date | date: "%Y%m%d" }}">{{ page.title }}</h1>
+    <div id="post__date">{{ page.date | date: "%Y-%m-%d" }}</div>
     {{ content }}
     <declare id="declare" class="declare">
       <hr/> 除非另有声明，本博客所有文章采用的授权方式为

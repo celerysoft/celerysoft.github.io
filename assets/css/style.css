@@ -412,6 +412,15 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+#post__date {
+  margin-top: 1.0em;
+  margin-bottom: 1.0em;
+  font-size: 1em;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
 #post__content #post__title {
   margin: 0;
   padding-top: 1.1em;

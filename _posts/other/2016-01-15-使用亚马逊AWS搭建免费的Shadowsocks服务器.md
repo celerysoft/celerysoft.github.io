@@ -217,7 +217,7 @@ sudo ssserver -c /etc/shadowsocks.json -d start
 
 然后保存退出，这样，服务器上的操作就算完成了，接下来改对本地计算机进行操作了。
 
-# 本地连接至Shadowsocks服务器
+# 四、本地连接至Shadowsocks服务器
 
 下载[Shadowsocks-GUI客户端](http://sourceforge.net/projects/shadowsocksgui/files/dist/)
 
@@ -235,6 +235,11 @@ sudo ssserver -c /etc/shadowsocks.json -d start
 更详细的使用方法，请查看[Shadowsocks-GUI For Mac OS使用指南](http://celerysoft.github.io/2016-01-17.html)。
 
 关于Windows下使用Shadowsocks的方法，还请自行搜索，想必也不复杂。
+
+# 五、取消AWS服务防止到期后正确扣费的正确姿势
+
+一言以蔽之，把你账户下所有AWS实例关闭并销毁。
+如果你因为忘记销毁实例而导致一年之后额外扣费，也可以找客服反应你已经很久没有使用AWS服务了，只是忘记关闭了，客服核实之后会把费用返还你的。
 
 > 参考：
 >

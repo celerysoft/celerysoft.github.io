@@ -14,10 +14,11 @@ title: 月下之光 - 攸溟的个人博客
 开源爱好者，轻度代码洁癖  
 
 ## 联系方式
-个人邮箱：<a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>  
-GitHub：[{{ site.author.github }}]({{ site.author.github }})  
-新浪微博：[{{ site.author.weibo }}]({{ site.author.weibo }})  
-Twitter：[@{{ site.twitter_username }}]({{ site.author.twitter }})  
+
+Email：[{{ site.author.email }}](mailto:{{ site.author.email }})  
+GitHub：[@{{ site.author.github_username }}]({{ site.author.github }})  
+新浪微博：[@{{ site.author.weibo_username }}]({{ site.author.weibo }})  
+Twitter：[@{{ site.author.twitter_username }}]({{ site.author.twitter }})  
 
 ## 我的标签
 <div>
