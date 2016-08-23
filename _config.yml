@@ -46,18 +46,19 @@ locals:                                     #自定义常量
 subscribe_rss: /pages/atom.xml              #订阅地址
 
 # 头像
-avatar: /assets/image/favicon.ico
+#avatar: /assets/image/favicon.ico
+avatar: http://7xpapo.com1.z0.glb.clouddn.com/blog/assets/image/favicon.ico
 # 网站CSS路径
-css: /assets/css/
-#css: http://7xpapo.com1.z0.glb.clouddn.com/css/
+#css: /assets/css/
+css: http://7xpapo.com1.z0.glb.clouddn.com/blog/assets/css/
 # 网站JS路径
-js: /assets/js/
-#js: http://7xpapo.com1.z0.glb.clouddn.com/js/
+#js: /assets/js/
+js: http://7xpapo.com1.z0.glb.clouddn.com/blog/assets/js/
 # 网站图片路径
-image: /assets/image/
-#js: http://7xpapo.com1.z0.glb.clouddn.com/image/
+#image: /assets/image/
+image: http://7xpapo.com1.z0.glb.clouddn.com/blog/assets/image/
 # 博文图片路径
-postimage: http://www.7xpapo.com1.z0.glb.clouddn.com/
+postimage: http://www.7xpapo.com1.z0.glb.clouddn.com/blog/assets/postImages/
 #postimage: /assets/postImages/
 
 # disqus 设置
