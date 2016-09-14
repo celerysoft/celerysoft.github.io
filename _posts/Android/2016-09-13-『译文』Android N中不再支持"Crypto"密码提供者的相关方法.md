@@ -2,13 +2,13 @@
 layout: post
 title: 『译文』Android N中不再支持“Crypto”安全供应商的相关方法
 categories: Android
-tags: [Crypto, Android, N]
+tags: [译文, Crypto, Android, N]
 ---
 
 原文：[http://android-developers.blogspot.com/2016/06/security-crypto-provider-deprecated-in.html](http://android-developers.blogspot.com/2016/06/security-crypto-provider-deprecated-in.html)  
 翻译自：2016年9月12日的[英文版本](http://celerysoft.github.io/2016-09-12.html)
 
-> 译者注：最近的项目把compileSdkVersion和targetSdkVersion升到24之后，在Android 7.0及以上版本的机器上，AES加密相关的方法遇到了新问题，按照提示找到了这篇官方博文，特地翻译过来方便国内开发者。如果你也遇到了这个问题，这里提供了一个[解决方案]((http://celerysoft.github.io/2016-09-12.html))，你可以看看。还有，我把provider译成安全供应商，你肯定觉得我想搞个大新闻:D
+> 译者注：最近的项目把compileSdkVersion和targetSdkVersion升到24之后，在Android 7.0及以上版本的机器上，AES加密相关的方法遇到了新问题，按照提示找到了这篇官方博文，特地翻译过来方便国内开发者。如果你也遇到了这个问题，这里提供了一个[解决方案](http://celerysoft.github.io/2016-09-14.html)，你可以看看。还有，我把provider译成安全供应商，你肯定觉得我想搞个大新闻:D
 
 *作者：Sergio Giro，软件工程师*
 
