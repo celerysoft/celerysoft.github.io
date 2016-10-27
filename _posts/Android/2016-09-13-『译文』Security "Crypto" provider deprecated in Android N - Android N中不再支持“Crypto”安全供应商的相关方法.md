@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『译文』Android N中不再支持“Crypto”安全供应商的相关方法
+title: 『译文』Security "Crypto" provider deprecated in Android N - Android N中不再支持“Crypto”安全供应商的相关方法
 categories: Android
 tags: [译文, Crypto, Android, N]
 ---
