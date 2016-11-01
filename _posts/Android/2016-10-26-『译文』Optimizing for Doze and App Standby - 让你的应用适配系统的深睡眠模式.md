@@ -94,7 +94,6 @@ GCM也是在深睡眠模式和应用待命状态下的最优选择，GCM有一�
 * 如果应用申请了[REQUEST_IGNORE_BATTERY_OPTIMIZATIONS](https://developer.android.com/reference/android/Manifest.permission.html#REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)权限，可以不跳转到系统设置界面，而是直接调用一个系统级的对话框，来让用户直接同意添加应用到白名单里。打开[ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS](https://developer.android.com/reference/android/provider/Settings.html#ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)Intent即可显示这个系统对话框
 * 如有必要，用户可以自行将应用用白名单上移除
 
-Before asking the user to add your app to the whitelist, make sure the app matches the acceptable use cases for whitelisting.
 在应用向用户请求添加自己到白名单前，请确保应用符合添加到白名单的情况，详见 **什么应用可以向用户请求将自己添加进电源管理白名单？**章节。
 
 > 注意：Google Play原则上是不允许任何应用在Android6.0及以上的设备里申请免除受到电源管理（即默认添加到白名单上），除非应用的核心功能在电源管理下受到极大的影响。

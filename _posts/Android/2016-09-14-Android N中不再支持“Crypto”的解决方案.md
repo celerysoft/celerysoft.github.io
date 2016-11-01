@@ -30,9 +30,9 @@ public class AESUtil {
      * @param keySizeInBytes 密钥大小(位)
      * @return 密钥
      */
-    private static SecretKey deriveKeySecurely(String password, int keySizeInBytes) {
+    private static SecretKey deriveKeySecurely(Context context, String password, int keySizeInBytes) {
         // Use this to derive the key from the password:
-        KeySpec keySpec = new PBEKeySpec(password.toCharArray(), retrieveSalt(),
+        KeySpec keySpec = new PBEKeySpec(password.toCharArray(), retrieveSalt(context),
                 100 /* iterationCount */, keySizeInBytes * 8 /* key size in bits */);
         try {
             SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
@@ -43,46 +43,46 @@ public class AESUtil {
         }
     }
 
-    private static byte[] retrieveIv() {
+    private static byte[] retrieveIv(Context context) {
         byte[] iv = new byte[IV_SIZE];
         // Ideally your data should have been encrypted with a random iv. This creates a random iv
         // if not present, in order to encrypt our mock data.
-        readFromFileOrCreateRandom(IV_FILE_NAME, iv);
+        readFromFileOrCreateRandom(context, IV_FILE_NAME, iv);
         return iv;
     }
 
-    private static byte[] retrieveSalt() {
+    private static byte[] retrieveSalt(Context context) {
         // Salt must be at least the same size as the key.
         byte[] salt = new byte[KEY_SIZE];
         // Create a random salt if encrypting for the first time, and save it for future use.
-        readFromFileOrCreateRandom(SALT_FILE_NAME, salt);
+        readFromFileOrCreateRandom(context, SALT_FILE_NAME, salt);
         return salt;
     }
 
-    private static void readFromFileOrCreateRandom(String fileName, byte[] bytes) {
-        if (fileExists(fileName)) {
-            readBytesFromFile(fileName, bytes);
+    private static void readFromFileOrCreateRandom(Context context, String fileName, byte[] bytes) {
+        if (fileExists(context, fileName)) {
+            readBytesFromFile(context, fileName, bytes);
             return;
         }
         SecureRandom sr = new SecureRandom();
         sr.nextBytes(bytes);
-        writeToFile(fileName, bytes);
+        writeToFile(context, fileName, bytes);
     }
 
-    private static boolean fileExists(String fileName) {
-        File file = new File(Global.getContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName);
+    private static boolean fileExists(Context context, String fileName) {
+        File file = new File(context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName);
         return file.exists();
     }
 
     @SuppressWarnings("unused")
-    private static void removeFile(String fileName) {
-        File file = new File(Global.getContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName);
+    private static void removeFile(Context context, String fileName) {
+        File file = new File(context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName);
         //noinspection ResultOfMethodCallIgnored
         file.delete();
     }
 
-    private static void writeToFile(String fileName, byte[] bytes) {
-        File file = new File(Global.getContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName);
+    private static void writeToFile(Context context, String fileName, byte[] bytes) {
+        File file = new File(context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName);
 
         try {
             FileOutputStream fos = new FileOutputStream(file);
@@ -95,8 +95,8 @@ public class AESUtil {
         }
     }
 
-    private static void readBytesFromFile(String fileName, byte[] bytes) {
-        File file = new File(Global.getContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName);
+    private static void readBytesFromFile(Context context, String fileName, byte[] bytes) {
+        File file = new File(context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName);
 
         try {
             FileInputStream fis = new FileInputStream(file);
@@ -144,8 +144,8 @@ public class AESUtil {
      * @param password 密钥
      * @return 已加密的数据
      */
-    public static byte[] encrypt(String data, String password) {
-        return encryptData(data.getBytes(), retrieveIv(), deriveKeySecurely(password, KEY_SIZE));
+    public static byte[] encrypt(Context context, String data, String password) {
+        return encryptData(data.getBytes(), retrieveIv(context), deriveKeySecurely(context, password, KEY_SIZE));
     }
 
     /**
@@ -154,14 +154,13 @@ public class AESUtil {
      * @param password 密钥
      * @return 已解密的数据
      */
-    public static byte[] decrypt(byte[] data, String password) {
-        return decryptData(data, retrieveIv(), deriveKeySecurely(password, KEY_SIZE));
+    public static byte[] decrypt(Context context, byte[] data, String password) {
+        return decryptData(data, retrieveIv(context), deriveKeySecurely(context, password, KEY_SIZE));
     }
-}
 {% endhighlight %}
 
 使用方法：
 
-调用`AESUtil.encrypt(String data, String password)`来加密数据，调用`AESUtil.decrypt(byte[] data, String password)`来解密数据。
+调用`AESUtil.encrypt(Context context, String data, String password)`来加密数据，调用`AESUtil.decrypt(Context context, byte[] data, String password)`来解密数据。
 
 Enjoy it
