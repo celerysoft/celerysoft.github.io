@@ -98,10 +98,16 @@ function afterPjax() {
   // Generate post TOC for h1 h2 and h3
   var toc = $('#post__toc-ul');
   // Empty TOC and generate an entry for h1
-  toc.empty().append('<li class="post__toc-li post__toc-h1"><a href="#post__title" class="js-anchor-link">' + $('#post__title').text() + '</a></li>');
+  var title = $('#post__title').text()
+  toc.empty().append('<li class="post__toc-li post__toc-h1"><a href="#post__title" class="js-anchor-link">' + title + '</a></li>');
 
   // Generate entries for h2 and h3
-  $('#post__content').children('h2,h3').each(function() {
+  $('#post__content').children('h1,h2').each(function() {
+    // Skip post title
+    if ($(this).attr('id') == 'post__title') {
+      return;
+    }
+
     // Generate random ID for each heading
     $(this).attr('id', function() {
       var ID = "",
@@ -113,7 +119,8 @@ function afterPjax() {
       return ID;
     });
 
-    if ($(this).prop("tagName") == 'H2') {
+    // Add each chapter to TOC
+    if ($(this).prop("tagName") == 'H1') {
       toc.append('<li class="post__toc-li post__toc-h2"><a href="#' + $(this).attr('id') + '" class="js-anchor-link">' + $(this).text() + '</a></li>');
     } else {
       toc.append('<li class="post__toc-li post__toc-h3"><a href="#' + $(this).attr('id') + '" class="js-anchor-link">' + $(this).text() + '</a></li>');
@@ -135,7 +142,6 @@ function afterPjax() {
   var ds_loaded = false,
       top = $('#disqus_thread').offset().top;
   window.disqus_shortname = $('#disqus_thread').attr('name');
-
   function check() {
     var currentScrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
     currentScrollTop = container.scrollTop();
