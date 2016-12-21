@@ -95,13 +95,13 @@ function afterPjax() {
   // Open links in new tab
   $('#post__content a').attr('target','_blank');
 
-  // Generate post TOC for h1 h2 and h3
+  // Generate post TOC for h1 and h2
   var toc = $('#post__toc-ul');
-  // Empty TOC and generate an entry for h1
+  // Empty TOC and generate an entry for post title
   var title = $('#post__title').text()
   toc.empty().append('<li class="post__toc-li post__toc-h1"><a href="#post__title" class="js-anchor-link">' + title + '</a></li>');
 
-  // Generate entries for h2 and h3
+  // Generate entries for h1 and h2
   $('#post__content').children('h1,h2').each(function() {
     // Skip post title
     if ($(this).attr('id') == 'post__title') {
