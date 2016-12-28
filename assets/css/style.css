@@ -506,6 +506,18 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 5px; }
 }
 
+@media screen and (max-width: 585px) {
+  #post__content #reward {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 586px) {
+  #post__content #reward {
+    max-width: 585px;
+    max-height: 585px;
+  }
+}
 
 #post__discuss {
   text-align: center;
