@@ -495,9 +495,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0px;
 }
 
-#post__content img[alt="2in1row"] {
-  max-width: 50%; }
-
 @media screen and (max-width: 585px) {
   #post__content img {
     max-width: 100%;
@@ -517,6 +514,10 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 585px;
     max-height: 585px;
   }
+}
+#post__content #reward {
+  max-width: 585px;
+  max-height: 585px;
 }
 
 #post__discuss {
