@@ -11,7 +11,7 @@ tags: [Gradle, jCenter, 发布]
 
 第一次用的时候感觉很神奇，等到自己参与到开源组件的开发的时候，也想实现这种效果，应该怎么操作呢？本文就介绍一下如何使用Gradle发布到jCenter。
 
-## 一、注册账号及获取API Key
+# 一、注册账号及获取API Key
 
 首先，我们需要一个Bintray的账号，在[https://bintray.com](https://bintray.com)进行注册。
 
@@ -27,9 +27,9 @@ tags: [Gradle, jCenter, 发布]
 
 ![03]({{ site.postimage }}2016010403.png)
 
-## 二、配置Gradle
+# 二、配置Gradle
 
-### 1、配置全局Gradle
+## 1、配置全局Gradle
 
 找到Gradle的目录，根据你的操作系统的不同，该目录位于
 
@@ -47,19 +47,16 @@ BINTRAY_USER为你在Bintray注册的用户名，BINTRAY_KEY则为刚才获取�
 
 当然，你也可以选择在每个项目中的`gradle.properties`文件添加上述Bintray信息，但这样做十分繁琐，还需要将该文件添加到.gitignore中，防止泄露了个人信息。
 
-### 2、配置项目Gradle
-
-> **以下用于打包成二进制的Gradle代码引用自[https://github.com/msdx/gradle-publish](https://github.com/msdx/gradle-publish)，感谢作者[貌似掉线](http://my.csdn.net/maosidiaoxian)。如有需要，请结合该项目的最新更新来创建你自己的打包代码。**
+## 2、配置项目Gradle
 
 我们开发开源控件时，一般都会包含两个module，`library`和`demo`，demo为控件的使用示例，library才是控件的实际源码，上传到jCenter时只需要上传library模块就行。
 
-#### 修改项目根目录的build.gradle文件
+### 修改项目根目录的build.gradle文件
 
 在dependencies下添加两行
 
 {% highlight Bash %}
-classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
-classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
+classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
 {% endhighlight%}
 
 添加完之后`gradle.properties`文件的内容大概如下
@@ -72,9 +69,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.0'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
+        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -92,7 +88,7 @@ task clean(type: Delete) {
 }
 {% endhighlight%}
 
-#### 修改项目library目录的build.gradle文件
+### 修改项目library目录的build.gradle文件
 
 在文件末尾添加一行：`apply from: 'bintray.gradle'`
 
@@ -104,7 +100,7 @@ version = PROJ_VERSION
 project.archivesBaseName = PROJ_ARTIFACTID
 
 apply plugin: 'com.jfrog.bintray'
-apply plugin: "com.jfrog.artifactory"
+//apply plugin: "com.jfrog.artifactory"
 apply plugin: 'maven-publish'
 
 task sourcesJar(type: Jar) {
@@ -133,7 +129,6 @@ javadoc {
         title PROJ_ARTIFACTID
     }
 }
-
 
 def pomConfig = {
     licenses {
@@ -192,52 +187,38 @@ bintray {
     pkg {
         repo = 'maven'
         name = PROJ_NAME
-        desc = PROJ_DESCRIPTION
-        websiteUrl = PROJ_WEBSITEURL
-        issueTrackerUrl = PROJ_ISSUETRACKERURL
-        vcsUrl = PROJ_VCSURL
         licenses = [PROJ_LICENSE]
-        publicDownloadNumbers = true
-    }
-}
+        vcsUrl = PROJ_VCSURL
+        userOrg = user
 
-artifactory {
-    contextUrl = 'http://oss.jfrog.org/artifactory'
-    resolve {
-        repository {
-            repoKey = 'libs-release'
+        version {
+            name = PROJ_VERSION
+            released  = new Date()
+            desc = PROJ_VERSION_DESC
+            vcsTag = PROJ_VERSION
         }
-    }
-    publish {
-        repository {
-            repoKey = 'oss-snapshot-local' //The Artifactory repository key to publish to
-            username = bintray.user
-            password = bintray.key
-            maven = true
-        }
-        defaults {
-            publications('mavenJava')
-            publishArtifacts = true
-        }
+
+        publicDownloadNumbers = true
     }
 }
 {% endhighlight%}
 
-113行和114行用到的就是刚才设置的全局gradle变量，Bintray的用户名和API Key，然后第1行的`PROJ_GROUP`和第2行的`PROJ_VERSION`又是啥？请继续往下看。
+84行和85行用到的就是刚才设置的全局gradle变量，Bintray的用户名和API Key，然后第1行的`PROJ_GROUP`和第2行的`PROJ_VERSION`又是啥？请继续往下看。
 
-#### 修改项目根目录的gradle.properties文件
+### 修改项目根目录的gradle.properties文件
 
 在文件末尾添加如下内容
 
 {% highlight Bash %}
 PROJ_GROUP=com.celerysoft
 PROJ_VERSION=1.0.0
+PROJ_VERSION_DESC=No release note left.
 PROJ_NAME=MaterialDesignDialog
-PROJ_WEBSITEURL=https://github.com/celerysoft/MaterialDesignDialog
-PROJ_ISSUETRACKERURL=
-PROJ_VCSURL=git@github.com:celerysoft/MaterialDesignDialog.git
-PROJ_DESCRIPTION=Android dialog that follows the Google Material Design.
 PROJ_ARTIFACTID=materialdesigndialog
+PROJ_DESCRIPTION=Android dialog that follows the Google Material Design.
+PROJ_WEBSITEURL=https://github.com/celerysoft/MaterialDesignDialog
+PROJ_VCSURL=git@github.com:celerysoft/MaterialDesignDialog.git
+PROJ_ISSUETRACKERURL=https://github.com/celerysoft/MaterialDesignDialog/issues
 PROJ_LICENSE=MIT
 PROJ_LICENSE_URL=https://raw.githubusercontent.com/celerysoft/MaterialDesignDialog/master/LICENSE
 
@@ -256,13 +237,17 @@ dependencies {
 
 可以发现，引用形式是`PROJ_GROUP:PROJ_ARTIFACTID:PROJ_VERSION`。
 
-## 三、上传到Bintray
+# 三、上传到Bintray
 
-由于在Windows和Mac OS下使用命令行的方法不一样，就不介绍命令行的方式，说说怎么在Android Studio里上传吧。上面的步骤执行完之后，先同步一下项目，即`Sync Project with Gradle Files`，然后点击Gradle，找到library的Task下的publishing里的bintrayUpload，双击执行上传，等待上传完成即可。
+由于在Windows和Mac OS下使用命令行的方法不一样，先说说怎么在Android Studio里上传吧。上面的步骤执行完之后，先同步一下项目，即`Sync Project with Gradle Files`，然后点击Gradle，找到library的Task下的publishing里的bintrayUpload，双击执行上传，等待上传完成即可。
+
+升级Android Studio 2.3之后发现这个方法会导致部分文件没有生成，所以只能采用命令行上传的方法了。
+
+在macOS下打开终端cd到项目目录，执行`./gradlew build bintrayUpload`即可，在Windows下估计也是类似的，我没试过，就不误导大家啦。
 
 ![04]({{ site.postimage }}2016010404.png)
 
-## 四、包含项目到jCenter
+# 四、包含项目到jCenter
 
 进入[https://bintray.com](https://bintray.com)并登录，找到你刚才上传的项目点进去，点击右下角的
 
