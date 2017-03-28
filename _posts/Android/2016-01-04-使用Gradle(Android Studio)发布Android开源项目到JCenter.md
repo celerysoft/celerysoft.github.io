@@ -53,7 +53,7 @@ BINTRAY_USER为你在Bintray注册的用户名，BINTRAY_KEY则为刚才获取�
 
 ### 修改项目根目录的build.gradle文件
 
-在dependencies下添加两行
+在dependencies下添加一行
 
 {% highlight Bash %}
 classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
