@@ -108,7 +108,7 @@ sudo easy_install pip
 {% endhighlight %}
 
 {% highlight Bash%}
-sudo pip install shadowsocks
+sudo pip install pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 {% endhighlight %}
 
 仔细看看有没有错误，如无错误即可继续
@@ -129,7 +129,21 @@ ssserver -h
 which ssserver
 {% endhighlight %}
 
-查看Shadowsocks的路径，一般是在/usr/local/bin目录下，我们只需要把/usr/local/bin加入到/etc/profile文件中即可。
+查看Shadowsocks的路径，一般是在**/usr/local/bin**目录下，我们只需要把/usr/local/bin加入到/etc/profile文件中即可。
+
+也可以通过
+
+{% highlight Bash%}
+/usr/local/bin/ssserver
+{% endhighlight %}
+
+来执行相应的命令。
+
+例如查看帮助为
+
+{% highlight Bash%}
+/usr/local/bin/ssserver -h
+{% endhighlight %}
 
 接下来创建shadowsocks目录，用于存放配置文件
 
@@ -148,21 +162,21 @@ sudo vim /etc/shadowsocks/config.json
 {% highlight Bash%}
 {
 
-"server":"0.0.0.0",
+"server": "0.0.0.0",
 
-"server_port":443,
+"server_port": 443,
 
-"local_address":"127.0.0.1",
+"local_address": "127.0.0.1",
 
-"local_port":1080,
+"local_port": 1080,
 
-"password":"celerysoft.github.io",
+"password": "celerysoft.github.io",
 
-"timeout":300,
+"timeout": 300,
 
-"method":"aes-256-cfb",
+"method": "aes-256-cfb",
 
-"fast_open":false,
+"fast_open": false,
 
 "workers": 1
 
