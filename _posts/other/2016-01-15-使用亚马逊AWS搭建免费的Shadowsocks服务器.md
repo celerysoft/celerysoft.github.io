@@ -108,7 +108,7 @@ sudo easy_install pip
 {% endhighlight %}
 
 {% highlight Bash%}
-sudo pip install pip install git+https://github.com/shadowsocks/shadowsocks.git@master
+sudo pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 {% endhighlight %}
 
 仔细看看有没有错误，如无错误即可继续
@@ -230,6 +230,10 @@ sudo ssserver -c /etc/shadowsocks.json -d start
 {% endhighlight %}
 
 然后保存退出，这样，服务器上的操作就算完成了，接下来改对本地计算机进行操作了。
+
+## 在AWS控制台开启相应的端口
+
+需要在安全组里把相应的端口打开，这个自己处理吧。
 
 # 四、本地连接至Shadowsocks服务器
 
