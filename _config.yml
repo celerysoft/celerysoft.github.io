@@ -47,18 +47,18 @@ subscribe_rss: /pages/atom.xml              #订阅地址
 
 # 头像
 #avatar: /assets/image/favicon.ico
-avatar: http://githubstatic.celerysoft.com.qiniudns.com/blog/assets/image/favicon.ico
+avatar: http://githubstatic.celerysoft.com/blog/assets/image/favicon.ico
 # 网站CSS路径
 #css: /assets/css/
-css: http://githubstatic.celerysoft.com.qiniudns.com/blog/assets/css/
+css: http://githubstatic.celerysoft.com/blog/assets/css/
 # 网站JS路径
 #js: /assets/js/
-js: http://githubstatic.celerysoft.com.qiniudns.com/blog/assets/js/
+js: http://githubstatic.celerysoft.com/blog/assets/js/
 # 网站图片路径
 #image: /assets/image/
-image: http://githubstatic.celerysoft.com.qiniudns.com/blog/assets/image/
+image: http://githubstatic.celerysoft.com/blog/assets/image/
 # 博文图片路径
-postimage: http://githubstatic.celerysoft.com.qiniudns.com/blog/assets/postImages/
+postimage: http://githubstatic.celerysoft.com/blog/assets/postImages/
 #postimage: /assets/postImages/
 
 # disqus 设置
